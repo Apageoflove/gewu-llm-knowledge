@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="422.171875" height="679.046875" id="mermaid-1774248514154" xmlns="http://www.w3.org/2000/svg" class="flowchart" style="max-width: 422.171875px;" viewBox="0 0 422.171875 679.046875" role="graphics-document document" aria-roledescription="flowchart-v2"><style>
+
+        /* Playful Doodle Style - Hand-drawn whimsical design */
+        
+        /* Flowchart nodes - Soft colors with hand-drawn borders */
+        .node rect, .node polygon {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          ry: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .node circle {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+        }
+        
+        .node .label {
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+          fill: #000000 !important;
+          font-size: 15px;
+        }
+        
+        /* Alternate node colors - Doodle style palette */
+        .node:nth-child(2n) rect,
+        .node:nth-child(2n) circle,
+        .node:nth-child(2n) polygon {
+          fill: #dff4ff !important;
+        }
+        
+        .node:nth-child(3n) rect,
+        .node:nth-child(3n) circle,
+        .node:nth-child(3n) polygon {
+          fill: #f0e7ff !important;
+        }
+        
+        .node:nth-child(5n) rect,
+        .node:nth-child(5n) circle,
+        .node:nth-child(5n) polygon {
+          fill: #fff4e6 !important;
+        }
+        
+        .node:nth-child(7n) rect,
+        .node:nth-child(7n) circle,
+        .node:nth-child(7n) polygon {
+          fill: #e7f9f5 !important;
+        }
+        
+        /* Connection lines - Hand-drawn style */
+        .edgePath .path {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .arrowheadPath {
+          fill: #000000 !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+        }
+        
+        .edgeLabel {
+          color: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        
+        .edgeLabel rect {
+          fill: #ffffff !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 12px !important;
+          filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+        }
+        
+        /* Sequence Diagram - Doodle style */
+        .actor {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          ry: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .actor:nth-child(2n) {
+          fill: #dff4ff !important;
+        }
+        
+        .actor:nth-child(3n) {
+          fill: #f0e7ff !important;
+        }
+        
+        .actor:nth-child(4n) {
+          fill: #fff4e6 !important;
+        }
+        
+        .actor text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .actor-line, g line.actor-line, g path.actor-line {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          stroke-dasharray: 6 3 !important;
+        }
+        
+        .activation0, .activation1, .activation2 {
+          fill: #f0e7ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+          filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+        }
+        
+        .messageLine0, .messageLine1 {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          stroke-linecap: round;
+        }
+        
+        .messageText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        
+        #arrowhead path, .arrowheadPath {
+          fill: #000000 !important;
+          stroke: #000000 !important;
+        }
+        
+        /* Note boxes - Soft yellow */
+        .note {
+          fill: #fff4e6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+          ry: 15px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .noteText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        /* Loop/Alt/Opt boxes - Soft purple */
+        .labelBox {
+          fill: #f0e7ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+          ry: 15px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .labelText, .loopText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .loopLine {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+        }
+        
+        /* Cluster/Subgraph styling - Soft blue */
+        .cluster rect {
+          fill: #dff4ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 25px !important;
+          ry: 25px !important;
+          filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.15));
+        }
+        
+        .cluster text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        /* State diagram */
+        .statediagram-state rect,
+        .statediagram-state .state-inner {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .statediagram-state:nth-child(2n) rect,
+        .statediagram-state:nth-child(2n) .state-inner {
+          fill: #dff4ff !important;
+        }
+        
+        .statediagram-state:nth-child(3n) rect,
+        .statediagram-state:nth-child(3n) .state-inner {
+          fill: #f0e7ff !important;
+        }
+        
+        .statediagram-state:nth-child(5n) rect,
+        .statediagram-state:nth-child(5n) .state-inner {
+          fill: #fff4e6 !important;
+        }
+        
+        .stateLabel text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .transition {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        /* Class Diagram */
+        .classGroup rect {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .classGroup:nth-child(2n) rect {
+          fill: #dff4ff !important;
+        }
+        
+        .classGroup:nth-child(3n) rect {
+          fill: #f0e7ff !important;
+        }
+        
+        .classGroup line {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+        }
+        
+        .classLabel .label {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .classLabel .box {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+        }
+        
+        .relationshipLine {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .relationshipLabelBox {
+          fill: #ffffff !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 10px !important;
+        }
+        
+        /* ER Diagram */
+        .er.entityBox {
+          fill: #dff4ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .er.entityBox:nth-child(2n) {
+          fill: #ffdff6 !important;
+        }
+        
+        .er.entityBox:nth-child(3n) {
+          fill: #f0e7ff !important;
+        }
+        
+        .er.entityLabel,
+        .er.relationshipLabel {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .er .relationshipLine {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .er .relationshipLabelBox {
+          fill: #ffffff !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 10px !important;
+        }
+        
+        /* Gantt Chart */
+        .titleText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+          font-size: 20px;
+        }
+        
+        .grid .tick text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-size: 13px;
+        }
+        
+        .grid line {
+          stroke: #e0e0e0 !important;
+          stroke-width: 1px !important;
+          opacity: 0.5;
+        }
+        
+        .taskText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .taskTextOutsideRight,
+        .taskTextOutsideLeft {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .task0, .task1, .task2, .task3 {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 12px !important;
+        }
+        
+        .task0 {
+          fill: #ffdff6 !important;
+        }
+        
+        .task1 {
+          fill: #dff4ff !important;
+        }
+        
+        .task2 {
+          fill: #f0e7ff !important;
+        }
+        
+        .task3 {
+          fill: #fff4e6 !important;
+        }
+        
+        .section0, .section1, .section2, .section3 {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        
+        .sectionTitle0, .sectionTitle1, .sectionTitle2, .sectionTitle3 {
+          fill: #ffffff !important;
+        }
+        
+        .done0, .done1, .done2, .done3 {
+          stroke: #22c55e !important;
+          stroke-width: 3px !important;
+          fill: #bbf7d0 !important;
+        }
+        
+        .active0, .active1, .active2, .active3 {
+          stroke: #3b82f6 !important;
+          stroke-width: 3px !important;
+          fill: #bfdbfe !important;
+        }
+        
+        .crit0, .crit1, .crit2, .crit3 {
+          stroke: #ef4444 !important;
+          stroke-width: 3px !important;
+          fill: #fecaca !important;
+        }
+        
+        .activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 {
+          stroke: #9333ea !important;
+          stroke-width: 3px !important;
+          fill: #e9d5ff !important;
+        }
+        
+        /* Pie Chart */
+        .pieCircle {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .pieTitleText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+          font-size: 20px;
+        }
+        
+        .slice {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+        }
+        
+        .slice:nth-child(1) {
+          fill: #ffdff6 !important;
+        }
+        
+        .slice:nth-child(2) {
+          fill: #dff4ff !important;
+        }
+        
+        .slice:nth-child(3) {
+          fill: #f0e7ff !important;
+        }
+        
+        .slice:nth-child(4) {
+          fill: #fff4e6 !important;
+        }
+        
+        .slice:nth-child(5) {
+          fill: #e7f9f5 !important;
+        }
+        
+        .slice:nth-child(6) {
+          fill: #fef3c7 !important;
+        }
+        
+        .pieOuterCircle {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          fill: none;
+        }
+        
+        .legend text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        
+        .legend rect {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 6px !important;
+        }
+        
+        /* Journey Diagram */
+        .journey-section {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          fill: #f0e7ff !important;
+          rx: 15px !important;
+        }
+        
+        .task-section {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 12px !important;
+        }
+        
+        .task-section:nth-child(2n) {
+          fill: #dff4ff !important;
+        }
+        
+        .task-section:nth-child(3n) {
+          fill: #fff4e6 !important;
+        }
+        
+        /* XYChart styles - Doodle theme colors */
+        .line-plot-0 path {
+          stroke: #ec4899 !important;
+          stroke-width: 4px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .line-plot-1 path {
+          stroke: #3b82f6 !important;
+          stroke-width: 4px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .line-plot-2 path {
+          stroke: #9333ea !important;
+          stroke-width: 4px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .bar-plot-0 rect {
+          fill: #fce7f3 !important;
+          stroke: #ec4899 !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+        }
+        
+        .bar-plot-1 rect {
+          fill: #dbeafe !important;
+          stroke: #3b82f6 !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+        }
+        
+        .bar-plot-2 rect {
+          fill: #f3e8ff !important;
+          stroke: #9333ea !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+        }
+        
+        .ticks path {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+        }
+        
+        .chart-title text {
+          fill: #000000 !important;
+          font-weight: 700 !important;
+          font-size: 20px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+        }
+        
+        .left-axis .label text, .bottom-axis .label text {
+          fill: #000000 !important;
+          font-size: 14px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .left-axis .title text, .bottom-axis .title text {
+          fill: #000000 !important;
+          font-size: 16px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .legend text {
+          fill: #000000 !important;
+          font-size: 14px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .legend rect {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 6px !important;
+        }
+        
+        /* Git Graph */
+        .commit-id, .commit-msg, .branch-label {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .commit {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .commit0 {
+          fill: #ffdff6 !important;
+        }
+        
+        .commit1 {
+          fill: #dff4ff !important;
+        }
+        
+        .commit2 {
+          fill: #f0e7ff !important;
+        }
+        
+        .commit3 {
+          fill: #fff4e6 !important;
+        }
+        
+        .commit-highlight-outer {
+          fill: #fbbf24;
+          opacity: 0.3;
+        }
+        
+        .commit-highlight-inner {
+          fill: #fbbf24;
+          opacity: 0.5;
+          stroke: #f59e0b;
+        }
+        
+        .branch path {
+          stroke-width: 3px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .branch.branch0 {
+          stroke: #ec4899 !important;
+        }
+        
+        .branch.branch1 {
+          stroke: #3b82f6 !important;
+        }
+        
+        .branch.branch2 {
+          stroke: #9333ea !important;
+        }
+        
+        .branch.branch3 {
+          stroke: #f59e0b !important;
+        }
+        
+        /* Timeline */
+        .timeline-event {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+          filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+        }
+        
+        .timeline-event:nth-child(2n) {
+          fill: #dff4ff !important;
+        }
+        
+        .timeline-event:nth-child(3n) {
+          fill: #f0e7ff !important;
+        }
+        
+        .timeline-event-text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+      
+</style><style>#mermaid-1774248514154{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:15px;fill:#000000;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1774248514154 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1774248514154 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1774248514154 .error-icon{fill:#f0e7ff;}#mermaid-1774248514154 .error-text{fill:#0f1800;stroke:#0f1800;}#mermaid-1774248514154 .edge-thickness-normal{stroke-width:1px;}#mermaid-1774248514154 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1774248514154 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1774248514154 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1774248514154 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1774248514154 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1774248514154 .marker{fill:#000000;stroke:#000000;}#mermaid-1774248514154 .marker.cross{stroke:#000000;}#mermaid-1774248514154 svg{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:15px;}#mermaid-1774248514154 p{margin:0;}#mermaid-1774248514154 .label{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;color:#000000;}#mermaid-1774248514154 .cluster-label text{fill:#0f1800;}#mermaid-1774248514154 .cluster-label span{color:#0f1800;}#mermaid-1774248514154 .cluster-label span p{background-color:transparent;}#mermaid-1774248514154 .label text,#mermaid-1774248514154 span{fill:#000000;color:#000000;}#mermaid-1774248514154 .node rect,#mermaid-1774248514154 .node circle,#mermaid-1774248514154 .node ellipse,#mermaid-1774248514154 .node polygon,#mermaid-1774248514154 .node path{fill:#ffdff6;stroke:#000000;stroke-width:1px;}#mermaid-1774248514154 .rough-node .label text,#mermaid-1774248514154 .node .label text,#mermaid-1774248514154 .image-shape .label,#mermaid-1774248514154 .icon-shape .label{text-anchor:middle;}#mermaid-1774248514154 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1774248514154 .rough-node .label,#mermaid-1774248514154 .node .label,#mermaid-1774248514154 .image-shape .label,#mermaid-1774248514154 .icon-shape .label{text-align:center;}#mermaid-1774248514154 .node.clickable{cursor:pointer;}#mermaid-1774248514154 .root .anchor path{fill:#000000!important;stroke-width:0;stroke:#000000;}#mermaid-1774248514154 .arrowheadPath{fill:#001107;}#mermaid-1774248514154 .edgePath .path{stroke:#000000;stroke-width:2.0px;}#mermaid-1774248514154 .flowchart-link{stroke:#000000;fill:none;}#mermaid-1774248514154 .edgeLabel{background-color:#dff4ff;text-align:center;}#mermaid-1774248514154 .edgeLabel p{background-color:#dff4ff;}#mermaid-1774248514154 .edgeLabel rect{opacity:0.5;background-color:#dff4ff;fill:#dff4ff;}#mermaid-1774248514154 .labelBkg{background-color:rgba(223, 244, 255, 0.5);}#mermaid-1774248514154 .cluster rect{fill:#f0e7ff;stroke:hsl(262.5, 60%, 85.2941176471%);stroke-width:1px;}#mermaid-1774248514154 .cluster text{fill:#0f1800;}#mermaid-1774248514154 .cluster span{color:#0f1800;}#mermaid-1774248514154 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:12px;background:#f0e7ff;border:1px solid hsl(262.5, 60%, 85.2941176471%);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1774248514154 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#000000;}#mermaid-1774248514154 rect.text{fill:none;stroke-width:0;}#mermaid-1774248514154 .icon-shape,#mermaid-1774248514154 .image-shape{background-color:#dff4ff;text-align:center;}#mermaid-1774248514154 .icon-shape p,#mermaid-1774248514154 .image-shape p{background-color:#dff4ff;padding:2px;}#mermaid-1774248514154 .icon-shape rect,#mermaid-1774248514154 .image-shape rect{opacity:0.5;background-color:#dff4ff;fill:#dff4ff;}#mermaid-1774248514154 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1774248514154 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1774248514154 .node rect,#mermaid-1774248514154 .node polygon{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;ry:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .node circle{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;filter:drop-shadow(3px 3px 0px rgba(0,0,0,0.15));}#mermaid-1774248514154 .node .label{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;fill:#000000!important;font-size:15px;}#mermaid-1774248514154 .node:nth-child(2n) rect,#mermaid-1774248514154 .node:nth-child(2n) circle,#mermaid-1774248514154 .node:nth-child(2n) polygon{fill:#dff4ff!important;}#mermaid-1774248514154 .node:nth-child(3n) rect,#mermaid-1774248514154 .node:nth-child(3n) circle,#mermaid-1774248514154 .node:nth-child(3n) polygon{fill:#f0e7ff!important;}#mermaid-1774248514154 .node:nth-child(5n) rect,#mermaid-1774248514154 .node:nth-child(5n) circle,#mermaid-1774248514154 .node:nth-child(5n) polygon{fill:#fff4e6!important;}#mermaid-1774248514154 .node:nth-child(7n) rect,#mermaid-1774248514154 .node:nth-child(7n) circle,#mermaid-1774248514154 .node:nth-child(7n) polygon{fill:#e7f9f5!important;}#mermaid-1774248514154 .edgePath .path{stroke:#000000!important;stroke-width:3px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248514154 .arrowheadPath{fill:#000000!important;stroke:#000000!important;stroke-width:2px!important;}#mermaid-1774248514154 .edgeLabel{color:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:14px;font-weight:600;}#mermaid-1774248514154 .edgeLabel rect{fill:#ffffff!important;stroke:#000000!important;stroke-width:2px!important;rx:12px!important;filter:drop-shadow(2px 2px 0px rgba(0,0,0,0.1));}#mermaid-1774248514154 .actor{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;ry:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .actor:nth-child(2n){fill:#dff4ff!important;}#mermaid-1774248514154 .actor:nth-child(3n){fill:#f0e7ff!important;}#mermaid-1774248514154 .actor:nth-child(4n){fill:#fff4e6!important;}#mermaid-1774248514154 .actor text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .actor-line,#mermaid-1774248514154 g line.actor-line,#mermaid-1774248514154 g path.actor-line{stroke:#000000!important;stroke-width:2px!important;stroke-dasharray:6 3!important;}#mermaid-1774248514154 .activation0,#mermaid-1774248514154 .activation1,#mermaid-1774248514154 .activation2{fill:#f0e7ff!important;stroke:#000000!important;stroke-width:3px!important;rx:8px!important;filter:drop-shadow(3px 3px 0px rgba(0,0,0,0.15));}#mermaid-1774248514154 .messageLine0,#mermaid-1774248514154 .messageLine1{stroke:#000000!important;stroke-width:3px!important;stroke-linecap:round;}#mermaid-1774248514154 .messageText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;font-size:14px;}#mermaid-1774248514154 #arrowhead path,#mermaid-1774248514154 .arrowheadPath{fill:#000000!important;stroke:#000000!important;}#mermaid-1774248514154 .note{fill:#fff4e6!important;stroke:#000000!important;stroke-width:3px!important;rx:15px!important;ry:15px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .noteText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 .labelBox{fill:#f0e7ff!important;stroke:#000000!important;stroke-width:3px!important;rx:15px!important;ry:15px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .labelText,#mermaid-1774248514154 .loopText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .loopLine{stroke:#000000!important;stroke-width:3px!important;rx:15px!important;}#mermaid-1774248514154 .cluster rect{fill:#dff4ff!important;stroke:#000000!important;stroke-width:3px!important;rx:25px!important;ry:25px!important;filter:drop-shadow(5px 5px 0px rgba(0,0,0,0.15));}#mermaid-1774248514154 .cluster text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .statediagram-state rect,#mermaid-1774248514154 .statediagram-state .state-inner{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .statediagram-state:nth-child(2n) rect,#mermaid-1774248514154 .statediagram-state:nth-child(2n) .state-inner{fill:#dff4ff!important;}#mermaid-1774248514154 .statediagram-state:nth-child(3n) rect,#mermaid-1774248514154 .statediagram-state:nth-child(3n) .state-inner{fill:#f0e7ff!important;}#mermaid-1774248514154 .statediagram-state:nth-child(5n) rect,#mermaid-1774248514154 .statediagram-state:nth-child(5n) .state-inner{fill:#fff4e6!important;}#mermaid-1774248514154 .stateLabel text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .transition{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248514154 .classGroup rect{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .classGroup:nth-child(2n) rect{fill:#dff4ff!important;}#mermaid-1774248514154 .classGroup:nth-child(3n) rect{fill:#f0e7ff!important;}#mermaid-1774248514154 .classGroup line{stroke:#000000!important;stroke-width:2px!important;}#mermaid-1774248514154 .classLabel .label{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .classLabel .box{stroke:#000000!important;stroke-width:3px!important;rx:20px!important;}#mermaid-1774248514154 .relationshipLine{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248514154 .relationshipLabelBox{fill:#ffffff!important;stroke:#000000!important;stroke-width:2px!important;rx:10px!important;}#mermaid-1774248514154 .er.entityBox{fill:#dff4ff!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248514154 .er.entityBox:nth-child(2n){fill:#ffdff6!important;}#mermaid-1774248514154 .er.entityBox:nth-child(3n){fill:#f0e7ff!important;}#mermaid-1774248514154 .er.entityLabel,#mermaid-1774248514154 .er.relationshipLabel{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .er .relationshipLine{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248514154 .er .relationshipLabelBox{fill:#ffffff!important;stroke:#000000!important;stroke-width:2px!important;rx:10px!important;}#mermaid-1774248514154 .titleText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;font-size:20px;}#mermaid-1774248514154 .grid .tick text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:13px;}#mermaid-1774248514154 .grid line{stroke:#e0e0e0!important;stroke-width:1px!important;opacity:0.5;}#mermaid-1774248514154 .taskText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 .taskTextOutsideRight,#mermaid-1774248514154 .taskTextOutsideLeft{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 .task0,#mermaid-1774248514154 .task1,#mermaid-1774248514154 .task2,#mermaid-1774248514154 .task3{stroke:#000000!important;stroke-width:3px!important;rx:12px!important;}#mermaid-1774248514154 .task0{fill:#ffdff6!important;}#mermaid-1774248514154 .task1{fill:#dff4ff!important;}#mermaid-1774248514154 .task2{fill:#f0e7ff!important;}#mermaid-1774248514154 .task3{fill:#fff4e6!important;}#mermaid-1774248514154 .section0,#mermaid-1774248514154 .section1,#mermaid-1774248514154 .section2,#mermaid-1774248514154 .section3{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;font-size:14px;}#mermaid-1774248514154 .sectionTitle0,#mermaid-1774248514154 .sectionTitle1,#mermaid-1774248514154 .sectionTitle2,#mermaid-1774248514154 .sectionTitle3{fill:#ffffff!important;}#mermaid-1774248514154 .done0,#mermaid-1774248514154 .done1,#mermaid-1774248514154 .done2,#mermaid-1774248514154 .done3{stroke:#22c55e!important;stroke-width:3px!important;fill:#bbf7d0!important;}#mermaid-1774248514154 .active0,#mermaid-1774248514154 .active1,#mermaid-1774248514154 .active2,#mermaid-1774248514154 .active3{stroke:#3b82f6!important;stroke-width:3px!important;fill:#bfdbfe!important;}#mermaid-1774248514154 .crit0,#mermaid-1774248514154 .crit1,#mermaid-1774248514154 .crit2,#mermaid-1774248514154 .crit3{stroke:#ef4444!important;stroke-width:3px!important;fill:#fecaca!important;}#mermaid-1774248514154 .activeCrit0,#mermaid-1774248514154 .activeCrit1,#mermaid-1774248514154 .activeCrit2,#mermaid-1774248514154 .activeCrit3{stroke:#9333ea!important;stroke-width:3px!important;fill:#e9d5ff!important;}#mermaid-1774248514154 .pieCircle{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248514154 .pieTitleText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;font-size:20px;}#mermaid-1774248514154 .slice{stroke:#000000!important;stroke-width:3px!important;filter:drop-shadow(2px 2px 0px rgba(0,0,0,0.1));}#mermaid-1774248514154 .slice:nth-child(1){fill:#ffdff6!important;}#mermaid-1774248514154 .slice:nth-child(2){fill:#dff4ff!important;}#mermaid-1774248514154 .slice:nth-child(3){fill:#f0e7ff!important;}#mermaid-1774248514154 .slice:nth-child(4){fill:#fff4e6!important;}#mermaid-1774248514154 .slice:nth-child(5){fill:#e7f9f5!important;}#mermaid-1774248514154 .slice:nth-child(6){fill:#fef3c7!important;}#mermaid-1774248514154 .pieOuterCircle{stroke:#000000!important;stroke-width:3px!important;fill:none;}#mermaid-1774248514154 .legend text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;font-size:14px;}#mermaid-1774248514154 .legend rect{stroke:#000000!important;stroke-width:2px!important;rx:6px!important;}#mermaid-1774248514154 .journey-section{stroke:#000000!important;stroke-width:3px!important;fill:#f0e7ff!important;rx:15px!important;}#mermaid-1774248514154 .task-section{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:12px!important;}#mermaid-1774248514154 .task-section:nth-child(2n){fill:#dff4ff!important;}#mermaid-1774248514154 .task-section:nth-child(3n){fill:#fff4e6!important;}#mermaid-1774248514154 .line-plot-0 path{stroke:#ec4899!important;stroke-width:4px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248514154 .line-plot-1 path{stroke:#3b82f6!important;stroke-width:4px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248514154 .line-plot-2 path{stroke:#9333ea!important;stroke-width:4px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248514154 .bar-plot-0 rect{fill:#fce7f3!important;stroke:#ec4899!important;stroke-width:3px!important;rx:8px!important;}#mermaid-1774248514154 .bar-plot-1 rect{fill:#dbeafe!important;stroke:#3b82f6!important;stroke-width:3px!important;rx:8px!important;}#mermaid-1774248514154 .bar-plot-2 rect{fill:#f3e8ff!important;stroke:#9333ea!important;stroke-width:3px!important;rx:8px!important;}#mermaid-1774248514154 .ticks path{stroke:#000000!important;stroke-width:2px!important;}#mermaid-1774248514154 .chart-title text{fill:#000000!important;font-weight:700!important;font-size:20px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;}#mermaid-1774248514154 .left-axis .label text,#mermaid-1774248514154 .bottom-axis .label text{fill:#000000!important;font-size:14px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 .left-axis .title text,#mermaid-1774248514154 .bottom-axis .title text{fill:#000000!important;font-size:16px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248514154 .legend text{fill:#000000!important;font-size:14px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 .legend rect{stroke:#000000!important;stroke-width:2px!important;rx:6px!important;}#mermaid-1774248514154 .commit-id,#mermaid-1774248514154 .commit-msg,#mermaid-1774248514154 .branch-label{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 .commit{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248514154 .commit0{fill:#ffdff6!important;}#mermaid-1774248514154 .commit1{fill:#dff4ff!important;}#mermaid-1774248514154 .commit2{fill:#f0e7ff!important;}#mermaid-1774248514154 .commit3{fill:#fff4e6!important;}#mermaid-1774248514154 .commit-highlight-outer{fill:#fbbf24;opacity:0.3;}#mermaid-1774248514154 .commit-highlight-inner{fill:#fbbf24;opacity:0.5;stroke:#f59e0b;}#mermaid-1774248514154 .branch path{stroke-width:3px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248514154 .branch.branch0{stroke:#ec4899!important;}#mermaid-1774248514154 .branch.branch1{stroke:#3b82f6!important;}#mermaid-1774248514154 .branch.branch2{stroke:#9333ea!important;}#mermaid-1774248514154 .branch.branch3{stroke:#f59e0b!important;}#mermaid-1774248514154 .timeline-event{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:15px!important;filter:drop-shadow(3px 3px 0px rgba(0,0,0,0.15));}#mermaid-1774248514154 .timeline-event:nth-child(2n){fill:#dff4ff!important;}#mermaid-1774248514154 .timeline-event:nth-child(3n){fill:#f0e7ff!important;}#mermaid-1774248514154 .timeline-event-text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248514154 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1774248514154_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248514154_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248514154_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248514154_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248514154_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248514154_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M168.586,60.5L168.586,64.667C168.586,68.833,168.586,77.167,168.586,84.833C168.586,92.5,168.586,99.5,168.586,103L168.586,106.5" id="L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6MTY4LjU4NTkzNzUsInkiOjYwLjV9LHsieCI6MTY4LjU4NTkzNzUsInkiOjg1LjV9LHsieCI6MTY4LjU4NTkzNzUsInkiOjExMC41fV0=" marker-end="url(#mermaid-1774248514154_flowchart-v2-pointEnd)"/><path d="M128.053,253.67L118.044,266.342C108.035,279.015,88.018,304.359,78.009,333.101C68,361.844,68,393.984,68,410.055L68,426.125" id="L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6MTI4LjA1MzAwNDAyMDg1NjE4LCJ5IjoyNTMuNjcwMTkxNTIwODU2MTh9LHsieCI6NjgsInkiOjMyOS43MDMxMjV9LHsieCI6NjgsInkiOjQzMC4xMjV9XQ==" marker-end="url(#mermaid-1774248514154_flowchart-v2-pointEnd)"/><path d="M209.119,253.67L219.128,266.342C229.137,279.015,249.154,304.359,259.163,322.281C269.172,340.203,269.172,350.703,269.172,355.953L269.172,361.203" id="L_B_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_D_0" data-points="W3sieCI6MjA5LjExODg3MDk3OTE0MzgyLCJ5IjoyNTMuNjcwMTkxNTIwODU2MTh9LHsieCI6MjY5LjE3MTg3NSwieSI6MzI5LjcwMzEyNX0seyJ4IjoyNjkuMTcxODc1LCJ5IjozNjUuMjAzMTI1fV0=" marker-end="url(#mermaid-1774248514154_flowchart-v2-pointEnd)"/><path d="M232.56,510.935L224.496,522.954C216.431,534.973,200.301,559.01,192.237,576.278C184.172,593.547,184.172,604.047,184.172,609.297L184.172,614.547" id="L_D_E_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_D_E_0" data-points="W3sieCI6MjMyLjU2MDQ0ODExNTgxOSwieSI6NTEwLjkzNTQ0ODExNTgxOX0seyJ4IjoxODQuMTcxODc1LCJ5Ijo1ODMuMDQ2ODc1fSx7IngiOjE4NC4xNzE4NzUsInkiOjYxOC41NDY4NzV9XQ==" marker-end="url(#mermaid-1774248514154_flowchart-v2-pointEnd)"/><path d="M305.783,510.935L313.848,522.954C321.913,534.973,338.042,559.01,346.107,576.278C354.172,593.547,354.172,604.047,354.172,609.297L354.172,614.547" id="L_D_F_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_D_F_0" data-points="W3sieCI6MzA1Ljc4MzMwMTg4NDE4MSwieSI6NTEwLjkzNTQ0ODExNTgxOX0seyJ4IjozNTQuMTcxODc1LCJ5Ijo1ODMuMDQ2ODc1fSx7IngiOjM1NC4xNzE4NzUsInkiOjYxOC41NDY4NzV9XQ==" marker-end="url(#mermaid-1774248514154_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(68, 329.703125)"><g class="label" data-id="L_B_C_0" transform="translate(-7, -10.5)"><foreignObject width="14" height="21"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>是</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(269.171875, 329.703125)"><g class="label" data-id="L_B_D_0" transform="translate(-7, -10.5)"><foreignObject width="14" height="21"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>否</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(184.171875, 583.046875)"><g class="label" data-id="L_D_E_0" transform="translate(-7, -10.5)"><foreignObject width="14" height="21"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>是</p></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(354.171875, 583.046875)"><g class="label" data-id="L_D_F_0" transform="translate(-7, -10.5)"><foreignObject width="14" height="21"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"><p>否</p></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-0" transform="translate(168.5859375, 34.25)"><rect class="basic label-container" style="" x="-101.61328125" y="-26.25" width="203.2265625" height="52.5"/><g class="label" style="" transform="translate(-71.61328125, -11.25)"><rect/><foreignObject width="143.2265625" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Claude 尝试执行命令</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-B-1" transform="translate(168.5859375, 202.3515625)"><polygon points="91.8515625,0 183.703125,-91.8515625 91.8515625,-183.703125 0,-91.8515625" class="label-container" transform="translate(-91.3515625, 91.8515625)"/><g class="label" style="" transform="translate(-65.6015625, -11.25)"><rect/><foreignObject width="131.203125" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>是否在 allow 列表?</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-C-3" transform="translate(68, 456.375)"><rect class="basic label-container" style="" x="-60" y="-26.25" width="120" height="52.5"/><g class="label" style="" transform="translate(-30, -11.25)"><rect/><foreignObject width="60" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>允许执行</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-D-5" transform="translate(269.171875, 456.375)"><polygon points="91.171875,0 182.34375,-91.171875 91.171875,-182.34375 0,-91.171875" class="label-container" transform="translate(-90.671875, 91.171875)"/><g class="label" style="" transform="translate(-64.921875, -11.25)"><rect/><foreignObject width="129.84375" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>是否在 deny 列表?</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-E-7" transform="translate(184.171875, 644.796875)"><rect class="basic label-container" style="" x="-60" y="-26.25" width="120" height="52.5"/><g class="label" style="" transform="translate(-30, -11.25)"><rect/><foreignObject width="60" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>拒绝执行</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-F-9" transform="translate(354.171875, 644.796875)"><rect class="basic label-container" style="" x="-60" y="-26.25" width="120" height="52.5"/><g class="label" style="" transform="translate(-30, -11.25)"><rect/><foreignObject width="60" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>默认策略</p></span></div></foreignObject></g></g></g></g></g></svg>
