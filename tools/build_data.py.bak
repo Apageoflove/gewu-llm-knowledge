@@ -1,0 +1,889 @@
+#!/usr/bin/env python3
+"""Build site data from scraped Yuque docs: lake HTML -> clean HTML, chunks, search index."""
+import json
+import hashlib
+import os
+import re
+import sys
+from urllib.parse import unquote
+from collections import OrderedDict
+
+from bs4 import BeautifulSoup, NavigableString, Tag
+
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RAW = os.path.join(BASE, "_raw")
+DATA = os.path.join(BASE, "data")
+os.makedirs(DATA, exist_ok=True)
+
+BOOK_NS = "aaron-wecc3/dhluml"
+
+# 推广/团队导读文档（空壳，内容为知识库公告，不收录）
+DROP_SLUGS = {"foho2nsutnn37gw3"}
+
+# 品牌词清理：只清除机构指向的表达，保护技术术语（图灵奖/图灵机/图灵测试/图灵完备）
+BRAND_PATTERNS = [
+    (re.compile(r"[（(]?图灵课堂[）)]?"), ""),
+    (re.compile(r"[（(]?图灵学院[）)]?"), ""),
+    (re.compile(r"[（(]?图灵教育[）)]?"), ""),
+    (re.compile(r"图灵诸葛老师"), ""),
+    (re.compile(r"图灵诸葛"), ""),
+    (re.compile(r"图灵教研(团队)?"), ""),
+    (re.compile(r"Python@图灵"), "Python"),
+    (re.compile(r"@图灵"), ""),
+]
+
+
+def sanitize_brand(s):
+    if "图灵" not in s:
+        return s
+    for pat, rep in BRAND_PATTERNS:
+        s = pat.sub(rep, s)
+    # 清理残留的空括号与重复标点
+    s = re.sub(r"[（(]\s*[）)]", "", s)
+    s = re.sub(r"([，。；、：])\1+", r"\1", s)
+    return s
+
+KEEP_COLOR = re.compile(r"^(#[0-9a-fA-F]{3,8}|rgba?\([^)]+\)|hsla?\([^)]+\)|[a-zA-Z]+)$")
+
+
+def parse_card_value(v):
+    if not v:
+        return {}
+    if v.startswith("data:"):
+        v = v[5:]
+    try:
+        v = unquote(v)
+        return json.loads(v)
+    except Exception:
+        try:
+            return json.loads(v)
+        except Exception:
+            return {}
+
+
+def human_size(n):
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        return ""
+    for unit in ("B", "KB", "MB", "GB"):
+        if n < 1024 or unit == "GB":
+            return ("%d%s" % (n, unit)) if unit == "B" else ("%.1f%s" % (n, unit))
+        n /= 1024.0
+
+
+def convert(content, imgmap=None, attmap=None):
+    """lake HTML -> (clean_html, outline, plaintext)"""
+    imgmap = imgmap or {}
+    attmap = attmap or {}
+    soup = BeautifulSoup(content or "", "lxml")
+    outline = []
+
+    # --- cards ---
+    for card in soup.find_all("card"):
+        name = card.get("name", "")
+        val = parse_card_value(card.get("value", ""))
+        repl = None
+        if name == "image":
+            src = val.get("src", "")
+            if src:
+                fig = soup.new_tag("figure")
+                fig["class"] = "img-card"
+                fig["data-ratio"] = str(round(val.get("ratio", 0) or 0, 3))
+                img = soup.new_tag("img")
+                img["src"] = imgmap.get(src, src)
+                img["alt"] = val.get("name") or val.get("caption") or "图片"
+                img["loading"] = "lazy"
+                if val.get("originWidth"):
+                    img["width"] = int(val["originWidth"])
+                if val.get("originHeight"):
+                    img["height"] = int(val["originHeight"])
+                fig.append(img)
+                cap = val.get("caption") or ""
+                if cap and cap.strip():
+                    fc = soup.new_tag("figcaption")
+                    fc.string = cap.strip()
+                    fig.append(fc)
+                repl = fig
+        elif name == "codeblock":
+            code = val.get("code", "")
+            lang = val.get("mode", "") or "text"
+            pre = soup.new_tag("pre")
+            pre["class"] = "code-block"
+            pre["data-lang"] = lang
+            c = soup.new_tag("code")
+            c.string = code
+            pre.append(c)
+            repl = pre
+        elif name == "math":
+            src = val.get("src", "")
+            latex = val.get("code", "")
+            if src:
+                img = soup.new_tag("img")
+                img["class"] = "math-img"
+                img["src"] = imgmap.get(src, src)
+                img["alt"] = latex
+                img["loading"] = "lazy"
+                repl = img
+            else:
+                c = soup.new_tag("code")
+                c["class"] = "math-fallback"
+                c.string = latex
+                repl = c
+        elif name == "hr":
+            repl = soup.new_tag("hr")
+        elif name == "localdoc":
+            src = val.get("src", "")
+            local = attmap.get(src)
+            a = soup.new_tag("a")
+            a["class"] = "attachment"
+            a["href"] = local or src
+            a["target"] = "_blank"
+            if not local:
+                a["rel"] = "noopener"
+            nm = val.get("name") or "附件"
+            ext = (val.get("ext") or "").upper()
+            size = human_size(val.get("size"))
+            meta = " · ".join(x for x in (ext, size) if x)
+            a["data-meta"] = meta
+            a.string = nm
+            repl = a
+        else:
+            d = soup.new_tag("div")
+            d["class"] = "unknown-card"
+            d["data-card"] = name
+            d.string = "[卡片: %s]" % name
+            repl = d
+        if repl is None:
+            card.decompose()
+        else:
+            card.replace_with(repl)
+
+    # --- unwrap p that only contains one block-level child ---
+    for p in soup.find_all("p"):
+        kids = [c for c in p.children if isinstance(c, Tag) or (isinstance(c, NavigableString) and str(c).strip())]
+        if len(kids) == 1 and isinstance(kids[0], Tag) and kids[0].name in ("figure", "pre", "hr"):
+            p.replace_with(kids[0])
+
+    # --- headings: ids + outline ---
+    hnum = 0
+    for h in soup.find_all(["h1", "h2", "h3", "h4", "h5", "h6"]):
+        hnum += 1
+        hid = "h%d" % hnum
+        h["id"] = hid
+        outline.append({"id": hid, "text": h.get_text(strip=True), "level": int(h.name[1])})
+
+    # --- links ---
+    for a in soup.find_all("a"):
+        href = a.get("href", "") or ""
+        m = re.match(r"^/" + re.escape(BOOK_NS) + r"/([a-z0-9]+)(?:#(.*))?$", href)
+        if m:
+            slug = m.group(1)
+            frag = m.group(2) or ""
+            a["href"] = "#/" + slug + (("#" + frag) if frag else "")
+            a["class"] = "doc-link"
+            a.attrs.pop("target", None)
+            a.attrs.pop("rel", None)
+        elif href.startswith("#"):
+            pass
+        elif href.startswith("http"):
+            a["target"] = "_blank"
+            a["rel"] = "noopener"
+            if "class" not in a.attrs or not a.get("class"):
+                a["class"] = "ext-link"
+        elif href.startswith("attachments/") or href.startswith("assets/"):
+            a["target"] = "_blank"
+        elif not href:
+            a.unwrap()
+
+    # --- strip attributes ---
+    ALLOWED = {
+        "a": {"href", "target", "rel", "class", "data-meta"},
+        "img": {"src", "alt", "width", "height", "loading", "class"},
+        "td": {"colspan", "rowspan"},
+        "th": {"colspan", "rowspan", "class"},
+        "ol": {"start"},
+        "pre": {"class", "data-lang"},
+        "code": {"class"},
+        "figure": {"class", "data-ratio"},
+        "figcaption": set(),
+        "span": {"style"},
+    }
+    for tag in soup.find_all(True):
+        allowed = ALLOWED.get(tag.name)
+        if allowed is None:
+            if tag.name not in ("p", "strong", "em", "u", "s", "br", "hr", "ul", "ol", "li",
+                                "table", "thead", "tbody", "tr", "blockquote",
+                                "h1", "h2", "h3", "h4", "h5", "h6"):
+                tag.unwrap()
+                continue
+            tag.attrs = {}
+        else:
+            tag.attrs = {k: v for k, v in tag.attrs.items() if k in allowed}
+        if tag.name == "span":
+            style = tag.get("style", "")
+            m = re.search(r"(?:^|;)\s*color\s*:\s*([^;]+)", style)
+            if m and KEEP_COLOR.match(m.group(1).strip()):
+                tag.attrs = {"style": "color:%s" % m.group(1).strip()}
+            else:
+                tag.unwrap()
+
+    # remove empty wrappers
+    for tag in soup.find_all(["table"]):
+        for junk in tag.find_all(["meta", "colgroup", "col"]):
+            junk.decompose()
+
+    # drop top-level empty p
+    for p in soup.find_all("p"):
+        if not p.get_text(strip=True) and not p.find(["img", "figure", "br"]):
+            p.decompose()
+
+    html = soup.decode() if hasattr(soup, "decode") else str(soup)
+    # body-level cleanup: soup is a full document; take inner of body
+    body = soup.body if soup.body is not None else soup
+    html = body.decode_contents() if hasattr(body, "decode_contents") else str(body)
+    html = re.sub(r"^\s*<!DOCTYPE[^>]*>\s*", "", html)
+    html = sanitize_brand(html)
+    plaintext = re.sub(r"\s+", " ", body.get_text(" ", strip=True))
+    plaintext = sanitize_brand(plaintext)
+    return html, outline, plaintext
+
+
+def build_tree():
+    """语雀目录 = 平铺数组顺序 + level 缩进。TITLE 为分组头；
+    L1 DOC 后跟随 L2 DOC 视为带子文档的分组（自身收录 + 子项嵌套）。"""
+    toc = json.load(open(os.path.join(RAW, "toc.json"), encoding="utf-8"))
+
+    sections = []
+    cur = None            # 当前 section
+    pending = None        # 当前可挂子文档的 L1 DOC 分组 {title, items}
+
+    def new_section(title):
+        s = {"title": title, "items": []}
+        sections.append(s)
+        return s
+
+    for t in toc:
+        typ = t["type"]
+        lvl = t.get("level", 1)
+        if typ == "TITLE":
+            cur = new_section(t["title"])
+            pending = None
+            continue
+        if not t.get("url"):
+            continue
+        if cur is None:
+            cur = new_section("导读")
+        if lvl <= 1:
+            pending = {"title": t["title"], "items": [t["url"]]}
+            cur["items"].append(pending)
+        else:
+            if pending is not None:
+                pending["items"].append(t["url"])
+            else:
+                cur["items"].append(t["url"])
+                pending = None if lvl >= 2 else pending
+    # 清理：单项分组折叠回普通文档；无可收录文档的节丢弃
+    def collapse(items):
+        out = []
+        for it in items:
+            if isinstance(it, dict):
+                sub = collapse(it["items"])
+                if len(sub) == 1 and isinstance(sub[0], str):
+                    out.append(sub[0])
+                else:
+                    it["items"] = sub
+                    out.append(it)
+            else:
+                out.append(it)
+        return out
+
+    def resolvable(items):
+        for it in items:
+            if isinstance(it, str):
+                if it not in DROP_SLUGS:
+                    return True
+            elif resolvable(it["items"]):
+                return True
+        return False
+
+    out = []
+    for s in sections:
+        s["items"] = collapse(s["items"])
+        if s["items"] and resolvable(s["items"]):
+            out.append(s)
+    return out
+
+
+def pdf_search_text(path, limit=60000):
+    """提取 PDF 文本用于全文搜索（尽力而为，图片型 PDF 返回空）"""
+    try:
+        from pypdf import PdfReader
+        r = PdfReader(path)
+        parts = []
+        for pg in r.pages[:80]:
+            t = pg.extract_text() or ""
+            parts.append(t)
+        txt = "\n".join(parts)
+        txt = re.sub(r"[ \t]+", " ", txt)
+        txt = re.sub(r"\n{2,}", "\n", txt)
+        return txt[:limit]
+    except Exception:
+        return ""
+
+
+HEADING_RE = re.compile(r"^([一二三四五六七八九十百]+[、.]|\d{1,2}[、.．)]|[①②③④⑤⑥⑦⑧⑨⑩]|Q\d+[.、:：]?|第[一二三四五六七八九十\d]+[章节部分]|CONTENTS|目\s*录|（[^）]{1,40}）|\(.{1,40}\))$")
+CJK_TAIL = re.compile(r"[，。；：、！？…—）》」』\u4e00-\u9fff]$")
+PAGE_NO = re.compile(r"^\d{1,3}$")
+NUMBER_LIST = re.compile(r"^([一二三四五六七八九十]+[、.]|\d{1,2}[.．、)])\s*")
+
+
+def _lines_to_html(text):
+    """PDF 页文本 -> 网页原生 HTML（智能标题识别 + 段落流式）"""
+    out = []
+    buf = ""
+
+    def flush():
+        nonlocal buf
+        if buf.strip():
+            out.append("<p>%s</p>" % esc_html(buf.strip()))
+        buf = ""
+
+    def is_heading(l):
+        if PAGE_NO.match(l):
+            return False
+        if len(l) > 50:
+            return False
+        if HEADING_RE.match(l):
+            return True
+        # 短行 + 不含句末标点 + 全角小语种字符 -> 标题候选
+        if len(l) <= 22 and not re.search(r"[，。；：、！？…—）」』]$", l) and any("一" <= c <= "鿿" for c in l):
+            return True
+        return False
+
+    def is_numbered(l):
+        m = NUMBER_LIST.match(l)
+        return m and len(l) < 80
+
+    for raw in text.split("\n"):
+        l = raw.strip()
+        if not l:
+            flush()
+            continue
+        if is_heading(l):
+            flush()
+            out.append("<h3>" + esc_html(l) + "</h3>")
+            continue
+        if is_numbered(l):
+            flush()
+            out.append("<h4>" + esc_html(l) + "</h4>")
+            continue
+        if buf:
+            tail_cjk = bool(re.search(r"[\u4e00-\u9fff，。；：、！？…—）」』]$", buf))
+            head_cjk = bool(re.match(r"[\u4e00-\u9fff]", l[0]))
+            buf += "" if (tail_cjk or head_cjk) else " "
+        buf += l
+        if len(buf) > 240:
+            flush()
+    flush()
+
+    # 段落合并：相邻 <p> 若上一个极短且看起来像上一段的延续，则合并
+    merged = []
+    for el in out:
+        if merged and el.startswith("<p>") and merged[-1].startswith("<p>"):
+            pm = merged[-1]
+            inner_prev = re.sub(r"</?p>", "", pm)
+            if len(inner_prev) < 60:
+                merged[-1] = pm[:-4] + " " + el[3:]
+                continue
+        merged.append(el)
+    return "".join(merged)
+
+
+def esc_html(s):
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+def _pdfminer_html(href):
+    """用 pdfminer.six 把 PDF 还原成网页原生结构，100% 保留原文。"""
+    import io
+    from pdfminer.high_level import extract_pages
+    from pdfminer.layout import (
+        LTTextContainer, LTTextLine, LTChar, LTFigure, LTPage, LTTextBox,
+    )
+    local = os.path.join(BASE, href)
+    if not os.path.exists(local):
+        return None, 0, 0
+
+    parts = []
+    text_pages = 0
+    img_pages = 0
+
+    def line_text(line):
+        """组成一行文字：保留 char 之间的空白处理。"""
+        out = []
+        for ch in line:
+            if isinstance(ch, LTChar):
+                out.append(ch.get_text())
+            elif hasattr(ch, "get_text"):
+                out.append(ch.get_text())
+        s = "".join(out)
+        # 行内中文之间不应有空格
+        return s.strip()
+
+    def line_sizes(line):
+        sizes = []
+        for ch in line:
+            if isinstance(ch, LTChar):
+                sizes.append(ch.size)
+        return sizes
+
+    def is_bullet(text):
+        t = text.lstrip()
+        return bool(re.match(
+            r"^[\u2022\u2023\u25E6\u2027\u25cf\u25cb\u00b7\u2022\u25aa\u25ab\u25fe\u25fc\u25fb\u25a0\u25a1\u2713\u2717\u25b6]",
+            t,
+        )) or bool(re.match(r"^\d+[\.\u3001\u3002\)\uff09]\s", t))
+
+    def is_numbered(text):
+        t = text.lstrip()
+        return bool(re.match(r"^\d+[\.\u3001\u3002\)]\s", t)) or bool(re.match(r"^[一二三四五六七八九十]+[\u3001\.]", t))
+
+    def is_short_heading(text):
+        t = text.strip()
+        if not t or len(t) > 60:
+            return False
+        # 句末不能是逗号句号分号冒号顿号引号（这些通常是正文），但允许问号（问句标题）
+        if re.search(r"[，。；：、…」』]$", t):
+            return False
+        if len(t) <= 25 and re.search(r"[\u4e00-\u9fff]", t):
+            return True
+        return False
+
+    key = hashlib.sha1(os.path.basename(href).encode()).hexdigest()[:12]
+    pdir = os.path.join(BASE, "assets", "pdfpages", key)
+    pages_img = sorted(f for f in os.listdir(pdir) if f.endswith(".jpg")) if os.path.isdir(pdir) else []
+
+    try:
+        with open(local, "rb") as fp:
+            pages = list(extract_pages(fp))
+    except Exception:
+        return None, 0, 0
+
+    for pi, page in enumerate(pages):
+        # pdfminer bbox: (x0, y0_bot, x1, y1_top)；top = bbox[3]
+        text_boxes = []  # (top_y, lines)
+        for box in page:
+            if isinstance(box, LTTextBox):
+                lines = [l for l in box if isinstance(l, LTTextLine)]
+                if not lines:
+                    continue
+                top_y = box.bbox[3] if hasattr(box, "bbox") else 0
+                text_boxes.append((top_y, lines))
+        if not text_boxes:
+            # 没有文本，可能是纯图页
+            if pi < len(pages_img):
+                parts.append('<figure class="pdf-page"><img src="assets/pdfpages/%s/%s" alt="第%d页" loading="lazy"></figure>' % (key, pages_img[pi], pi + 1))
+                img_pages += 1
+            continue
+
+        # 分列处理：按 LTTextBox 的 top 从上到下，但同水平位置（x 重叠）的 box
+        # 才视为同一列；左右双列要按"先左后右"
+        text_boxes_with_y = [(top, lines) for top, lines in text_boxes]
+        text_boxes_with_y.sort(key=lambda x: -x[0])  # top_y 降序（top 大的先 = 顶部先）
+
+        all_lines = []  # (top_y, x_left, line)
+        for top_y, lines in text_boxes_with_y:
+            for ln in lines:
+                all_lines.append((ln.bbox[3], ln.bbox[0], ln))
+        all_lines.sort(key=lambda x: (-x[0], x[1]))  # top_y 降序（顶部先），同列 x 升序
+
+        # 按行生成段：相邻行 y 间距 < 行高 1.4× 视为同段
+        rendered = []
+        cur_paragraph = ""
+        cur_sizes = []
+        in_list = False
+        list_buffer = []
+
+        def flush_para():
+            nonlocal cur_paragraph, cur_sizes, rendered
+            if cur_paragraph:
+                rendered.append("<p>" + esc_html(cur_paragraph) + "</p>")
+                cur_paragraph = ""
+                cur_sizes = []
+
+        def flush_list():
+            nonlocal list_buffer, rendered, in_list
+            if list_buffer:
+                rendered.append("<ul>" + "".join("<li>" + x + "</li>" for x in list_buffer) + "</ul>")
+                list_buffer = []
+                in_list = False
+
+        def flush_code():
+            nonlocal code_buffer, rendered
+            if code_buffer:
+                rendered.append("<pre><code>" + "\n".join(code_buffer) + "</code></pre>")
+                code_buffer = []
+
+        prev_top = None
+        prev_x = None
+        prev_height = None
+        prev_kind = None
+        prev_h_elem = None
+        prev_p_elem = None
+        prev_li_elem = None
+        code_buffer = []
+
+        for top_y, x, line in all_lines:
+            text = line_text(line)
+            if not text:
+                continue
+            sz = line_sizes(line)
+            avg = sum(sz) / len(sz) if sz else 12
+
+            line_height = line.height if hasattr(line, "height") else 12
+            gap = (prev_top - top_y) if prev_top else line_height
+            new_para = prev_top is not None and gap > line_height * 1.8
+
+            looks_like_heading = prev_top is None or (gap > line_height * 1.5)
+            is_head = looks_like_heading and is_short_heading(text) and not text.endswith("：") and not is_bullet(text)
+
+            is_continuation = (
+                prev_top is not None
+                and not is_head
+                and gap < line_height * 1.2
+                and abs(x - (prev_x or x)) < 30
+                and prev_kind in ("h", "p", "li")
+            )
+
+            if new_para or is_head or is_bullet(text):
+                if not is_continuation:
+                    flush_para(); flush_list(); flush_code()
+
+            if is_continuation:
+                if prev_kind == "h" and prev_h_elem is not None:
+                    h = prev_h_elem[0]
+                    h = h.replace("</h3>", esc_html(text) + "</h3>", 1)
+                    prev_h_elem[0] = h
+                elif prev_kind == "p" and prev_p_elem is not None:
+                    p = prev_p_elem[0]
+                    p = p[:-4] + esc_html(text) + "</p>"
+                    prev_p_elem[0] = p
+                elif prev_kind == "li" and prev_li_elem is not None:
+                    li = prev_li_elem[0]
+                    li = li[:-5] + " " + esc_html(text) + "</li>"
+                    prev_li_elem[0] = li
+                prev_top = top_y
+                prev_x = x
+                prev_height = line_height
+                continue
+
+            if is_head:
+                h_html = "<h3>" + esc_html(text) + "</h3>"
+                rendered.append(h_html)
+                prev_h_elem = [h_html]
+                prev_p_elem = None
+                prev_li_elem = None
+                prev_kind = "h"
+                prev_top = top_y
+                prev_x = x
+                prev_height = line_height
+                continue
+
+            if is_bullet(text):
+                li_html = "<li>" + esc_html(text.lstrip("\u2022\u2023\u25E6\u2027\u25cf\u25cb\u00b7\u2022\u25aa\u25ab\u25fe\u25fc\u25fb\u25a0\u25a1\u2713\u2717\u25b6\u00b7 -—●○").strip()) + "</li>"
+                list_buffer.append(li_html)
+                prev_li_elem = [li_html]
+                prev_h_elem = None
+                prev_p_elem = None
+                prev_kind = "li"
+                in_list = True
+                prev_top = top_y
+                prev_x = x
+                prev_height = line_height
+                continue
+            elif in_list:
+                flush_list()
+
+            non_ascii = sum(1 for c in text if ord(c) > 127)
+            code_symbols = sum(1 for c in text if c in "{}[]();=><|!+-*/&%^~#?:,.")
+            looks_like_code = (
+                non_ascii == 0
+                and code_symbols >= 2
+                and not text.endswith(("。", "？", "！", "：", ".", "?", "!", ":"))
+            )
+            if looks_like_code:
+                code_buffer.append(esc_html(text))
+                prev_kind = "code"
+                prev_h_elem = None
+                prev_p_elem = None
+                prev_li_elem = None
+                prev_top = top_y
+                prev_x = x
+                prev_height = line_height
+                continue
+            else:
+                flush_code()
+
+            p_html = "<p>" + esc_html(text) + "</p>"
+            if cur_paragraph:
+                cur_paragraph[0] = cur_paragraph[0][:-4] + esc_html(text) + "</p>"
+            else:
+                cur_paragraph = [p_html]
+                rendered.append(p_html)
+                prev_p_elem = cur_paragraph
+                prev_kind = "p"
+                prev_h_elem = None
+                prev_li_elem = None
+            cur_sizes.append(avg)
+            prev_top = top_y
+            prev_x = x
+            prev_height = line_height
+
+        flush_para()
+        flush_list()
+        flush_code()
+
+        body_html = "".join(rendered)
+
+        .join(rendered)
+        if body_html.strip():
+            parts.append('<section class="pdf-page-section">' + body_html + '</section>')
+            text_pages += 1
+        elif pi < len(pages_img):
+            parts.append('<figure class="pdf-page"><img src="assets/pdfpages/%s/%s" alt="第%d页" loading="lazy"></figure>' % (key, pages_img[pi], pi + 1))
+            img_pages += 1
+
+    if not parts:
+        return None, 0, 0
+    return "".join(parts), text_pages, img_pages
+
+
+def pdf_web_html(href):
+    """PDF → 网页原生内容：使用 pdfminer.six 严格按版面还原。"""
+    return _pdfminer_html(href)
+
+
+def pdf_pages_html(href):
+    """把本地 PDF 渲染出的逐页图片转成正文 figure 序列；未渲染则返回 (None, 0)"""
+    key = hashlib.sha1(os.path.basename(href).encode()).hexdigest()[:12]
+    pdir = os.path.join(BASE, "assets", "pdfpages", key)
+    if not os.path.exists(os.path.join(pdir, "done.txt")):
+        return None, 0
+    pages = sorted(f for f in os.listdir(pdir) if f.endswith(".jpg"))
+    if not pages:
+        return None, 0
+    rel = "assets/pdfpages/" + key
+    parts = []
+    for p in pages:
+        parts.append('<figure class="pdf-page"><img src="%s/%s" alt="PDF 页面" loading="lazy"></figure>' % (rel, p))
+    return "".join(parts), len(pages)
+
+
+def main():
+    sections = build_tree()
+    toc = json.load(open(os.path.join(RAW, "toc.json"), encoding="utf-8"))
+    TOC_BY_SLUG = {t["url"]: t for t in toc if t["type"] == "DOC" and t.get("url")}
+    docs_meta = []
+    contents = OrderedDict()
+    seen_slugs = set()
+
+    def add_doc(d, path):
+        if d["url"] in seen_slugs or d["url"] in DROP_SLUGS:
+            return
+        seen_slugs.add(d["url"])
+        docs_meta.append({
+            "slug": d["url"],
+            "title": sanitize_brand(d["title"]),
+            "section": sanitize_brand(path),
+            "level": d.get("level", 2),
+        })
+
+    def walk_items(items, path):
+        for it in items:
+            if isinstance(it, str):
+                ent = TOC_BY_SLUG.get(it)
+                if ent:
+                    add_doc(ent, path)
+            else:
+                walk_items(it["items"], (path + " / " + it["title"]) if path else it["title"])
+
+    for sec in sections:
+        walk_items(sec["items"], sec["title"])
+
+    imgmap = {}
+    imgmap_path = os.path.join(RAW, "imgmap.json")
+    if os.path.exists(imgmap_path):
+        imgmap = json.load(open(imgmap_path, encoding="utf-8"))
+        print("imgmap entries:", len(imgmap))
+
+    # attachments: url -> site-relative path
+    attmap = {}
+    att_src = os.path.join(RAW, "attachments")
+    att_dst = os.path.join(BASE, "attachments")
+    if os.path.isdir(att_src):
+        os.makedirs(att_dst, exist_ok=True)
+        import shutil
+        for fn in os.listdir(att_src):
+            if fn.endswith(".url"):
+                continue
+            u = open(os.path.join(att_src, fn + ".url"), encoding="utf-8").read().strip() if \
+                os.path.exists(os.path.join(att_src, fn + ".url")) else ""
+            dst = os.path.join(att_dst, fn)
+            if not os.path.exists(dst):
+                shutil.copy2(os.path.join(att_src, fn), dst)
+            if u:
+                attmap[u] = "attachments/" + fn
+        print("attachments localized:", len(attmap))
+
+    dead = set()
+    dead_path = os.path.join(RAW, "dead.json")
+    if os.path.exists(dead_path):
+        dead = set(json.load(open(dead_path, encoding="utf-8")))
+
+    ok, empty = 0, 0
+    for i, m in enumerate(docs_meta):
+        path = os.path.join(RAW, "docs", m["slug"] + ".json")
+        if not os.path.exists(path):
+            m["missing"] = True
+            if m["slug"] in dead:
+                m["dead"] = True
+                contents[m["slug"]] = {"html": '<p class="missing-doc">该文档在源知识库中已删除或未发布（404）。</p>', "outline": [], "text": ""}
+            else:
+                contents[m["slug"]] = {"html": '<p class="missing-doc">该文档尚未抓取到，可重新运行抓取。</p>', "outline": [], "text": ""}
+            continue
+        d = json.load(open(path, encoding="utf-8"))
+        html, outline, text = convert(d.get("content", ""), imgmap, attmap)
+        contents[m["slug"]] = {"html": html, "outline": outline, "text": text}
+        # 附件型正文：PDF 逐页原图直接平铺（零二次点击），zip 保留卡片
+        att_tags = re.findall(r'<a class="attachment"[^>]*>.*?</a>', html)
+        if att_tags and len(re.sub(r"<[^>]+>", "", html).strip()) < 400:
+            entry = {"html": html, "outline": outline, "text": text}
+            atts = []
+            for tag in att_tags:
+                href_m = re.search(r'href="([^"]+)"', tag)
+                meta_m = re.search(r'data-meta="([^"]*)"', tag)
+                name_m = re.search(r'>([^<]+)</a>', tag)
+                if href_m:
+                    atts.append({"href": href_m.group(1),
+                                 "meta": meta_m.group(1) if meta_m else "",
+                                 "name": name_m.group(1) if name_m else "附件"})
+            parts = []
+            head_extra = []
+            for a in atts:
+                if a["href"].endswith(".pdf"):
+                    web = pdf_web_html(a["href"])
+                    if web and web[0]:
+                        html_body, text_pages, img_pages = web
+                        m["pages"] = m.get("pages") or text_pages + img_pages
+                        mode = "网页排版" if img_pages == 0 else ("图文混排" if text_pages > 0 else "原图版式")
+                        head_extra.append(
+                            '<div class="pdf-origin"><span>本篇已转为' + mode + "（原文 " + a["name"] + " · " + a["meta"] + " · 共 " + str(text_pages + img_pages) + " 页）</span>" +
+                            '<span class="pdf-origin-actions"><a href="' + a["href"] + '" target="_blank" rel="noopener">原版 PDF</a><a href="' + a["href"] + '" download>下载</a></span></div>')
+                        parts.append(html_body)
+                    else:
+                        head_extra.append(
+                            '<div class="pdf-origin"><span>' + a["name"] + " · " + a["meta"] + "</span>" +
+                            '<span class="pdf-origin-actions"><a href="' + a["href"] + '" target="_blank" rel="noopener">打开 PDF</a></span></div>')
+                else:
+                    parts.append('<p><a class="attachment" href="%s" target="_blank" data-meta="%s">%s</a></p>' % (a["href"], a["meta"], a["name"]))
+            entry["html"] = "".join(head_extra) + "".join(parts)
+            # PDF 文本进搜索索引
+            extra = []
+            for a in atts:
+                if a["href"].endswith(".pdf"):
+                    local = os.path.join(BASE, a["href"])
+                    if os.path.exists(local):
+                        extra.append(pdf_search_text(local))
+            joined = " ".join(x for x in extra if x)
+            if joined:
+                entry["text"] = (text + " " + joined).strip()
+                m["words"] = len(joined)
+            contents[m["slug"]] = entry
+        m["words"] = d.get("word_count") or len(text)
+        if not html.strip():
+            empty += 1
+        else:
+            ok += 1
+
+    # sections structure for the sidebar
+    sec_out = [{"title": s["title"], "items": s["items"]} for s in sections]
+
+    meta = {
+        "book": "格物 · 大模型知识库",
+        "edition": "2026",
+        "total": len(docs_meta),
+        "okDocs": ok,
+        "sections": sec_out,
+        "docs": docs_meta,
+    }
+    with open(os.path.join(DATA, "meta.js"), "w", encoding="utf-8") as f:
+        f.write("window.__META=")
+        json.dump(meta, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";")
+
+    # chunks: ~1.6MB html budget each
+    CHUNK_BUDGET = 1_600_000
+    chunk_idx = 0
+    cur = {}
+    cur_size = 0
+    doc_chunk = {}
+    for slug, c in contents.items():
+        blob = json.dumps(c, ensure_ascii=False, separators=(",", ":"))
+        doc_chunk[slug] = chunk_idx
+        cur[slug] = c
+        cur_size += len(blob)
+        if cur_size >= CHUNK_BUDGET:
+            write_chunk(chunk_idx, cur)
+            chunk_idx += 1
+            cur = {}
+            cur_size = 0
+    if cur:
+        write_chunk(chunk_idx, cur)
+        chunk_idx += 1
+
+    with open(os.path.join(DATA, "docmap.js"), "w", encoding="utf-8") as f:
+        f.write("window.__DOC_CHUNK=")
+        json.dump(doc_chunk, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";")
+
+    # search part count marker (written after parts are known; patched later)
+    search_count_path = os.path.join(DATA, "search_count.js")
+
+    # search split files (plain text), ~2MB each
+    SEARCH_BUDGET = 2_000_000
+    parts = []
+    cur_entries = []
+    cur_len = 0
+    for m in docs_meta:
+        c = contents[m["slug"]]
+        entry_text = (c.get("text") or "")[:20000]
+        cur_entries.append([m["slug"], m["title"], m["section"], entry_text])
+        cur_len += len(entry_text) + len(m["title"]) * 2
+        if cur_len >= SEARCH_BUDGET:
+            parts.append(cur_entries)
+            cur_entries = []
+            cur_len = 0
+    if cur_entries:
+        parts.append(cur_entries)
+    for i, p in enumerate(parts):
+        with open(os.path.join(DATA, "search_%02d.js" % i), "w", encoding="utf-8") as f:
+            f.write('(window.__SEARCH_PARTS=window.__SEARCH_PARTS||{})[%d]=' % i)
+            json.dump(p, f, ensure_ascii=False, separators=(",", ":"))
+            f.write(";")
+    with open(search_count_path, "w", encoding="utf-8") as f:
+        f.write("window.__SEARCH_COUNT=%d;" % len(parts))
+
+    print("docs total=%d ok=%d empty=%d missing=%d chunks=%d searchparts=%d"
+          % (len(docs_meta), ok, empty, sum(1 for m in docs_meta if m.get("missing")), chunk_idx, len(parts)))
+
+
+def write_chunk(idx, cur):
+    with open(os.path.join(DATA, "chunk_%02d.js" % idx), "w", encoding="utf-8") as f:
+        f.write("(window.__CHUNKS=window.__CHUNKS||{})[%d]=" % idx)
+        json.dump(cur, f, ensure_ascii=False, separators=(",", ":"))
+        f.write(";")
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,1 @@
+window.__SEARCH_COUNT=2;

@@ -1,0 +1,977 @@
+{
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042424-390d9c7a-033c-4993-bb01-ee5369112456.pdf": {
+  "name": "256.新手小白如何入门大语言模型？.pdf",
+  "size": 18412863,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749261173614-9427d530-05e4-4a21-b8ce-ac5f742e176b.zip": {
+  "name": "llamafactory-ddp.zip",
+  "size": 20304,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592215255-22202ca1-f3d2-4c1f-afb2-3713c54209af.pdf": {
+  "name": "分布式训练之PyTorch多进程模块面试题.pdf",
+  "size": 244297,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053270-85074453-7178-4948-88f7-c08a00131d5c.pdf": {
+  "name": "225.基于Docker本地部署Coze.pdf",
+  "size": 12460139,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740039923-26537d6c-d3bc-408c-ac8a-4ac8166d8c67.pdf": {
+  "name": "271.零基础速通AI大模型应用开发学习路线.pdf",
+  "size": 22724651,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038743-2d3bd2c4-d152-4d01-8b0c-5221fd1cd71a.pdf": {
+  "name": "277.LangChain 1.0应该要怎么用.pdf",
+  "size": 18863478,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051654-d48aade6-c6bf-45b3-a198-755e60beb570.pdf": {
+  "name": "233.多头注意力机制.pdf",
+  "size": 12786660,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769781346656-5ca57914-57d8-4fd9-9b62-0afe3bb54048.pdf": {
+  "name": "282.ReAct框架原理解析与面试实战.pdf",
+  "size": 23648415,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749261173854-a80d5d09-70b4-409b-8b9e-742a9b80810d.zip": {
+  "name": "llamafactory-fsdp.zip",
+  "size": 20770,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734915-a1d4896c-1a6e-43dc-a7a4-480b84e9761f.pdf": {
+  "name": "249.Transformer核心原理与训练优化.pdf",
+  "size": 16326185,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1748309455322-225a169b-a5bf-4203-b404-cb4060b80dda.zip": {
+  "name": "xtuner-demo.zip",
+  "size": 5244,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053229-5e17db30-7a30-4c43-ae11-a5e9174acc6b.pdf": {
+  "name": "224.大模型微调流程理论篇.pdf",
+  "size": 21552243,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053026-342f3523-18fd-4d4c-a5c7-6df95be7a930.pdf": {
+  "name": "227.如何进行词嵌入.pdf",
+  "size": 19324009,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325266-7005d16e-ac0a-4d19-923d-38d974254d6c.pdf": {
+  "name": "大模型生成SFT数据方法面试题.pdf",
+  "size": 726081,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054276-8c4cbec3-64e7-4219-8233-7ce55342ab50.pdf": {
+  "name": "215.模型测评之如何评估大模型的表现.pdf",
+  "size": 12343888,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734967-852e596e-2745-4a44-80db-80777f4604fe.pdf": {
+  "name": "250.LlamaFactory微调你的AI大模型.pdf",
+  "size": 15336203,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592300934-9e053534-a46c-4a48-9060-004a1f8fd3db.pdf": {
+  "name": "Transformers操作面试题.pdf",
+  "size": 193208,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1748917156376-e03e6dcc-a169-48c0-bb97-f7bacb56fb1f.zip": {
+  "name": "llamafactory-quick.zip",
+  "size": 1702,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734906-78e16c90-c1c8-45e3-a325-13a58d696897.pdf": {
+  "name": "244.对比学习MOCO.pdf",
+  "size": 16940102,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922266075-53d132a4-e01e-4d02-be4d-ac871992a9aa.pdf": {
+  "name": "Prompting学习微调面试题.pdf",
+  "size": 376492,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167134-1d764184-1d9b-4476-8d07-5788170be92a.pdf": {
+  "name": "196.LangChain、Dify、n8n、Coze框架对比.pdf",
+  "size": 12001701,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051730-ea2cce73-1421-41e7-bd1e-bd682b7068c7.pdf": {
+  "name": "231.LLM的局限性与RAG技术引入.pdf",
+  "size": 18904785,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734734-9429b8f7-31fe-4021-a6d3-36295a1006f4.pdf": {
+  "name": "251.AI大模型工作原理及三大核心能力.pdf",
+  "size": 13845768,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488809-0cb2612a-711f-489e-b4ac-6c7edd2ce7af.pdf": {
+  "name": "RAG优化相关面试题.pdf",
+  "size": 2671854,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922265927-d23ee48c-3614-49b5-b6f0-ecd541cfc622.pdf": {
+  "name": "大模型推理相关面试题.pdf",
+  "size": 618572,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488122-2a081cba-b1e5-40c0-b508-18ecfe4b6e56.pdf": {
+  "name": "大模型RAG文本分块面试题.pdf",
+  "size": 375294,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167153-50e8bf6f-1d9a-48ae-ba36-65975b1b2765.pdf": {
+  "name": "195.模型微调原理.pdf",
+  "size": 12658628,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1753931389683-a2fe4d0e-e16b-45d1-bebf-c01a2405c9e5.zip": {
+  "name": "mcp-demo.zip",
+  "size": 3815,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981487916-e5ca3bd7-b1b5-406a-aa15-4128df23029a.pdf": {
+  "name": "大模型RAG评测面试题.pdf",
+  "size": 495499,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053239-ca651bbe-724c-4a6e-bc14-533248da6234.pdf": {
+  "name": "221.LoRA微调从原理到调参.pdf",
+  "size": 12089137,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734231-31d949f4-c95c-4d28-82fb-369d312d90bf.pdf": {
+  "name": "247.多模态算法ALBEF模型解析.pdf",
+  "size": 17064720,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1753931389964-1a3dece0-253c-4af4-90d1-743822b722fb.zip": {
+  "name": "mcp-demo.zip",
+  "size": 2837,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910621-77632089-c8ae-47e5-b8d5-c15da586c258.pdf": {
+  "name": "176.RAG检索增强生成.pdf",
+  "size": 11589219,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734728-7cd96816-c0c8-4383-9c02-7e65a600a47c.pdf": {
+  "name": "252.AI大模型思维链原理.pdf",
+  "size": 13707000,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042343-a5c7d68d-bc04-4b6b-be68-e6c3c42f351e.pdf": {
+  "name": "258.认识AI大模型：从基础到应用.pdf",
+  "size": 18106352,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051728-af72fc2c-ba6b-46b6-8687-7ccbc34624ed.pdf": {
+  "name": "235.17种RAG优化策略.pdf",
+  "size": 13435280,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592215183-820b64a9-a051-4ab7-abc7-7b3d5fbff5d8.pdf": {
+  "name": "大模型Adapter微调面试题.pdf",
+  "size": 167274,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165479-8a24b139-79f2-4a4b-8260-83fed8475cd9.pdf": {
+  "name": "209.RAG技术的三大范式和技术演进.pdf",
+  "size": 17505471,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165358-e5be71eb-6e6e-4839-bdec-a61c49fafad3.pdf": {
+  "name": "202.用大白话理解提示工程、RAG、微调.pdf",
+  "size": 16609510,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040761-5002a14c-bef8-4261-99e6-f10e660cb1c3.pdf": {
+  "name": "262.六大AI核心概念：从幻觉到Agent.pdf",
+  "size": 14077981,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038775-8ad4561c-a648-4c8d-b0b8-15cceea97820.pdf": {
+  "name": "281.从传统RAG到Agentic RAG的进阶优化.pdf",
+  "size": 21413120,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592215253-2ebec220-34ff-4e48-979a-15b06c64a956.pdf": {
+  "name": "大模型评测面试题.pdf",
+  "size": 241503,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922265856-5849dd9d-7f2c-4f5f-98f9-938ae0b74525.pdf": {
+  "name": "大模型PEFT库中使用LoRA技巧面试题.pdf",
+  "size": 488309,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666377-dfb19f0c-01b0-4e9a-a252-2ea29ba510ce.pdf": {
+  "name": "Llama模型Lora训练微调面试题.pdf",
+  "size": 2072717,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734737-8c7558b1-41be-42a5-983b-98f6c9c387d2.pdf": {
+  "name": "248.多模态算法BLIP模型深度解析.pdf",
+  "size": 14902883,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038405-fc36c82c-8f2a-4001-8347-4d2276a169d7.pdf": {
+  "name": "280.Rerank模型深度讲解.pdf",
+  "size": 24040935,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038814-2d545994-2ceb-40ab-a664-71f0be21b643.pdf": {
+  "name": "274.BERT核心原理及预训练机制.pdf",
+  "size": 18295756,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666484-af4956dc-8bd1-4b0d-a91e-e3965ddbe63b.pdf": {
+  "name": "大模型参数高效微调面试题.pdf",
+  "size": 1556232,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666198-61c0b969-fdb2-475f-9244-010cfc115834.pdf": {
+  "name": "大模型增量预训练面试题.pdf",
+  "size": 857814,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749879893966-801ab4bf-909c-4cb0-82b8-e2e367867137.zip": {
+  "name": "echarts-demo.zip",
+  "size": 1090,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371554910-b8fabe29-c7d0-4469-8870-15cc96ad88cf.pdf": {
+  "name": "Langchain RAG问答应用面试题.pdf",
+  "size": 311458,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165367-8e8586d3-e6cc-460e-85ca-44cd591b677b.pdf": {
+  "name": "205.Coze工作流和触发器.pdf",
+  "size": 26236459,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488187-90c1076e-a5e0-4811-a89e-04fe9cda76cd.pdf": {
+  "name": "RAG Fusion优化策略面试题.pdf",
+  "size": 1063276,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325226-04dc5fba-b0f3-444e-a458-8823a56c7cc0.pdf": {
+  "name": "大模型强化学习面试题.pdf",
+  "size": 251269,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040564-44bc2232-f745-4fbd-bce1-5181961f4110.pdf": {
+  "name": "269.SFT、RLHF、DPO的真实边界.pdf",
+  "size": 22007315,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325258-2d2e283f-95e9-4b88-9fe1-20f184edb71b.pdf": {
+  "name": "Attention 进阶面试题.pdf",
+  "size": 388482,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051748-09cf1c6f-ee8b-41d9-a46a-66d518983e93.pdf": {
+  "name": "229.知识图谱是什么.pdf",
+  "size": 17932508,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325992-15ed38fe-31d7-403e-8595-f1f86461e108.pdf": {
+  "name": "大模型RLHF相关面试题.pdf",
+  "size": 2479854,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769781346759-d40c8af2-c858-4217-a5ab-3f3c7f28922e.pdf": {
+  "name": "283.DeepSeek-R1微调实战.pdf",
+  "size": 19632604,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666508-90a38f93-4617-45a8-ae6f-dfc0db22aa71.pdf": {
+  "name": "大模型LoRA微调面试题.pdf",
+  "size": 734446,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488605-ba2de629-71fd-4bd5-a796-90ee75388c33.pdf": {
+  "name": "大模型RAG表格识别方法面试题.pdf",
+  "size": 618883,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922265911-c5acc941-4ccc-4d86-8361-804414270a1d.pdf": {
+  "name": "分布式训练之AMP混合精度训练面试题.pdf",
+  "size": 537786,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592215277-4f9c1941-fa66-4a63-a530-e63fb34f9cf3.pdf": {
+  "name": "大模型训练集面试题.pdf",
+  "size": 286497,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772383-a1f9ba12-bd80-41e5-b87e-1e34926557e8.pdf": {
+  "name": "188.LangGraph工作流与人机交互.pdf",
+  "size": 10521965,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769781346717-60f95e3b-56f2-464f-9ebb-c506737a2d43.pdf": {
+  "name": "284.Agent Skill 原理和实践指南.pdf",
+  "size": 20495716,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054205-430cf8cd-5f58-4020-a1be-750e22bd41c7.pdf": {
+  "name": "216.DeepSpeed大模型分布式框架.pdf",
+  "size": 11543067,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1753931390107-4ae91a54-37ac-424b-87ed-b539738b0f58.zip": {
+  "name": "mcp-demo.zip",
+  "size": 5681,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910532-5e61671c-18f6-43e2-8be1-346de6fcb430.pdf": {
+  "name": "177.深度解析RAG与模型微调.pdf",
+  "size": 10873282,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054205-9b654fac-56b6-4fb8-8062-2279af4754b1.pdf": {
+  "name": "217.深度学习模型工作原理详解.pdf",
+  "size": 20517119,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740041759-1c93ce9f-5228-4761-8524-ab6ab1537e35.pdf": {
+  "name": "261.Gemini 3.0模型测评.pdf",
+  "size": 18902216,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053194-b3ddb60a-0bea-4bca-975c-05f4dd43e5ec.pdf": {
+  "name": "223.Dify+Qwen3构建股票分析系统.pdf",
+  "size": 11961037,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325956-6be36c0d-3fb9-4807-8ba5-f757182a0924.pdf": {
+  "name": "大模型进阶面试题.pdf",
+  "size": 935759,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666882-2da539c6-98ed-4a57-82bd-bd0c515da589.pdf": {
+  "name": "大模型微调相关面试题.pdf",
+  "size": 3486826,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040487-eb4dd824-ae92-45ad-a7ad-b21ab61b6948.pdf": {
+  "name": "263.多模态融合技术前沿进展深度解析.pdf",
+  "size": 19048100,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270736883-716a1475-51ba-4184-9e22-de0ca4db5b9a.pdf": {
+  "name": "242.知识图谱的构建和应用.pdf",
+  "size": 20751410,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772346-9ee85ca7-1013-4723-a26f-a73372fb1a87.pdf": {
+  "name": "189.LangGraph子图可控性.pdf",
+  "size": 9428641,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592215496-a009e7a3-f270-4d36-b102-10f405fb9edc.pdf": {
+  "name": "大模型显存优化策略面试题.pdf",
+  "size": 235623,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325243-d19e71cf-6afa-48f4-9d18-f5c202e1cdd9.pdf": {
+  "name": "大模型激活函数面试题.pdf",
+  "size": 365912,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1748917156358-ff980567-781f-42cd-a997-ebd47d2fc983.zip": {
+  "name": "llamafactory-merge.zip",
+  "size": 2203,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1756654389728-f3d12ed6-1a91-4ffd-9137-b5f702ea6fc6.zip": {
+  "name": "mcp-quick.zip",
+  "size": 58353,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167058-3c210282-9a9d-4e9e-b22e-f8f2b9147acc.pdf": {
+  "name": "194.AI大模型幻觉深度解析.pdf",
+  "size": 14650203,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1748917156402-6f395869-24df-4690-8c7b-f5dd7078acf9.zip": {
+  "name": "llamafactory-lora.zip",
+  "size": 1696,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165539-dab400e0-dcb0-462c-a533-c37592d5101c.pdf": {
+  "name": "208.MCP最佳落地实践.pdf",
+  "size": 19125561,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040562-e5558c08-56c2-4d23-b9c3-ec36c5817669.pdf": {
+  "name": "266.知识图谱全景导读.pdf",
+  "size": 18736017,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592215493-35da10a7-874d-46a9-996a-f4f0a792c777.pdf": {
+  "name": "大模型训练经验面试题.pdf",
+  "size": 246079,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772210-d0f93535-0924-4153-8313-638a94d4ecaa.pdf": {
+  "name": "190.MCP 三种通信机制对比.pdf",
+  "size": 12647278,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772302-01a22a16-2898-49de-828e-412902bc3ced.pdf": {
+  "name": "186.RAG系统的高级优化工程.pdf",
+  "size": 15019359,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1756179543693-cf7dc8bf-acc4-412c-96c7-9c1fc63b7184.zip": {
+  "name": "mcp-enterprise.zip",
+  "size": 1347660,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053059-33db623b-3572-4bee-a8e9-c9082f5621b1.pdf": {
+  "name": "226.Al Agent项目实战.pdf",
+  "size": 13641425,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042342-ef2b3d16-0f70-4a63-8447-2481dd80e582.pdf": {
+  "name": "257.AI大模型推理与训练详解.pdf",
+  "size": 17779750,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772339-7668437a-0185-4165-a281-c675e794b118.pdf": {
+  "name": "192.Llamalndex构建基于行业数据的LLM应用.pdf",
+  "size": 13175361,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/22811459/1766414100551-086d6e55-164d-4255-a43e-26f8a09484ed.pdf": {
+  "name": "AI大模型赋能千行百业实战.pdf",
+  "size": 7017661,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165379-a1020337-f804-42a2-adee-53a3cd109885.pdf": {
+  "name": "203.Agents 最佳实践指南.pdf",
+  "size": 12821958,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207911905-7cfa417f-b2b4-41be-b6bd-d13188e057f3.pdf": {
+  "name": "174.10分钟拆解大语言模型黑箱.pdf",
+  "size": 2375101,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167071-61927c6a-92f8-4ff9-8335-ce967a9b6808.pdf": {
+  "name": "193.AI+Agent三大核心技术.pdf",
+  "size": 11934228,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772373-147981e6-3c27-459a-87e9-3a260f6336e4.pdf": {
+  "name": "187.LangChain 快速入门与底层原理.pdf",
+  "size": 11420082,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165515-a952acc6-4f10-413f-b135-28a0ee051ab2.pdf": {
+  "name": "210.Vibe Coding 从入门到实践.pdf",
+  "size": 14362273,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054284-73ec160b-da21-4fe9-801c-7ce63641bafa.pdf": {
+  "name": "213.如何微调训练电商大模型.pdf",
+  "size": 18215674,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051286-e7d528ba-ab41-4f2d-bda7-027b07306410.pdf": {
+  "name": "237.Al Agent核心概念和模块.pdf",
+  "size": 12171040,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038754-29d13166-8316-4874-9d2c-a6ba1496d463.pdf": {
+  "name": "276.多头自注意力机制深度解析.pdf",
+  "size": 22081207,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165408-76a820ca-2326-4c40-8eff-b60f52cb41d6.pdf": {
+  "name": "204.为什么说Al大模型微调中最不需要关注的就是GPU.pdf",
+  "size": 12282470,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054413-dd6ad78b-a64c-472b-9b78-3e8490d5a48c.pdf": {
+  "name": "214.借助大模型API自动处理任务.pdf",
+  "size": 17367221,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1747014138764-7b76f13f-3ba2-47b6-b1ef-96d2a1381bf1.zip": {
+  "name": "qlora-llama.zip",
+  "size": 9442,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325235-3934b883-f5da-4c2b-b858-df0da1a52f00.pdf": {
+  "name": "强化学习自然语言应用面试题.pdf",
+  "size": 543481,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910566-33e3dd55-e8a0-4ccf-8de8-bd997013401b.pdf": {
+  "name": "175.大模型应用架构解析.pdf",
+  "size": 11270308,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042372-239e47c5-45ed-4f64-a4f7-7c9672c3fcf2.pdf": {
+  "name": "259.AI大模型CUDA是什么？.pdf",
+  "size": 14833048,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1747014138672-3166849b-ff10-4fbe-9d68-9ae216a5a346.zip": {
+  "name": "qlora-quick.zip",
+  "size": 20796,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053088-b63d7653-e592-4690-a765-a05ed3b96775.pdf": {
+  "name": "228.LangChain应用框架实践教程.pdf",
+  "size": 11998824,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165292-d06f12d9-06a5-407f-9bc1-349a8fa6d1e9.pdf": {
+  "name": "206.Coze知识库和记忆.pdf",
+  "size": 29092424,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1755056832645-a93b71e5-f580-4b86-b206-9c96aa72243a.zip": {
+  "name": "cursor-demo.zip",
+  "size": 658013,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1755056833133-89eda2b7-f0f5-4064-a051-e2d8a5883230.zip": {
+  "name": "cursor-demo.zip",
+  "size": 155955,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666497-1a5baa85-9aad-458a-aab6-23e610b5c497.pdf": {
+  "name": "大模型流水线并行训练面试题.pdf",
+  "size": 1438023,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1746582257220-f74d982a-1384-4671-8a22-84f37b619367.zip": {
+  "name": "ia3-train.zip",
+  "size": 9455,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038763-9305feed-b085-4685-87a2-5b468ea64336.pdf": {
+  "name": "273.向量化和词嵌入的区别是什么.pdf",
+  "size": 21686273,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053237-4c2959e4-f6b9-4dc3-b88a-5f23dbe942d9.pdf": {
+  "name": "222.用Al优化Excel工作流程.pdf",
+  "size": 11562158,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1748309455309-91035c09-8be9-42e5-8df5-2465cf507039.zip": {
+  "name": "xtuner-train.zip",
+  "size": 4357,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666477-720f7b31-94c5-4677-9b8e-9fbad7dbbd9a.pdf": {
+  "name": "大模型分布式训练面试题.pdf",
+  "size": 1543401,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910544-28bb5237-8ef2-4ba8-af9d-6517305dc1bf.pdf": {
+  "name": "179.AI大模型微调.pdf",
+  "size": 10632421,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051833-0c0e029e-d510-4d28-9e1d-675e69ee67aa.pdf": {
+  "name": "230.MCP一键生成可视化Excel.pdf",
+  "size": 12010481,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1746582257328-0ffbcfe9-5d8e-4894-8790-da0e56d985a7.zip": {
+  "name": "sd-peft.zip",
+  "size": 3075052,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666505-e0db1885-a3ac-4714-898c-7100aac68442.pdf": {
+  "name": "分布式训练之ZeRO学习面试题.pdf",
+  "size": 838707,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042371-b8d077f0-b120-47cb-a325-3788390f3db4.pdf": {
+  "name": "254.AI大模型技术解析：从基础架构到核心机制.pdf",
+  "size": 17745718,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040459-7907f5c6-239e-4a24-a9eb-91a2cc422496.pdf": {
+  "name": "270.AIGC与生成式AI全景拆解.pdf",
+  "size": 18336981,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053863-b74c0b95-cded-4ce2-bda4-dc0afb5586ae.pdf": {
+  "name": "219.基于Dify的RAG问答工作流.pdf",
+  "size": 22049993,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038762-9dcb33bb-0a99-4e15-afce-fbf9a693692a.pdf": {
+  "name": "272.模型蒸馏是什么.pdf",
+  "size": 21196246,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910538-f83d1a15-9570-4298-96e9-4ccf1dba0f64.pdf": {
+  "name": "178.AI Agent 智能体.pdf",
+  "size": 11817017,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/22811459/1766414292407-99f47e45-b2b5-4b97-8c1a-13ef9c4d5e27.pdf": {
+  "name": "AI大模型公司项目落地实战.pdf",
+  "size": 28367377,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666474-7df2a3aa-79eb-4caa-87f9-f54b176deae3.pdf": {
+  "name": "分布式并行训练面试题.pdf",
+  "size": 956412,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749261173808-dbd25528-e7e9-4c21-b417-2ffeba14d474.zip": {
+  "name": "llamafactory-eval.zip",
+  "size": 9860,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042346-c5012df5-201e-4d9c-a765-635cc85515c9.pdf": {
+  "name": "260.如何微调BERT模型进行文本分类.pdf",
+  "size": 19400118,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734990-6bbf5600-9e48-42c6-9254-c206d2b48488.pdf": {
+  "name": "245.MoE架构深度拆解.pdf",
+  "size": 13619826,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165018-82018954-501e-4af9-a3bc-c27af1babb0c.pdf": {
+  "name": "211.深入理解Transformer技术原理.pdf",
+  "size": 11306327,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592235488-493c1eaa-656c-4761-b177-e235d98a2a1b.pdf": {
+  "name": "长期记忆8种优化方式面试题.pdf",
+  "size": 308560,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051331-ce079429-d318-4ba6-88b7-d7be82d20c54.pdf": {
+  "name": "238.混合专家模型MoE.pdf",
+  "size": 11306311,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772381-f3991c7b-4eea-4270-b686-18b0d221fa2e.pdf": {
+  "name": "185.深入理解检索增强生成(RAG)的工作机制.pdf",
+  "size": 11020946,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038758-48e92f93-2647-4821-898f-2edf239f17de.pdf": {
+  "name": "275.神经网络工作原理深度解析.pdf",
+  "size": 21324359,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749261173845-719a2e07-e542-4e8c-90d7-b48e0fd257c7.zip": {
+  "name": "llamafactory-track.zip",
+  "size": 20595,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1755056832801-f7071873-b5a2-42f4-b530-7c8a4baad7b6.zip": {
+  "name": "cursor-demo.zip",
+  "size": 119306,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1756179542892-c7318315-e562-4405-b52a-362232f3397d.zip": {
+  "name": "fastmcp-demo.zip",
+  "size": 139997,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270737109-0b1a570e-756f-442c-ae72-1fc8be894881.pdf": {
+  "name": "240.Transformer中的前馈神经网络(FFN).pdf",
+  "size": 12163577,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270734870-0d7e5dc1-f48f-4876-ad0d-8b2a71aadeaf.pdf": {
+  "name": "246.基于LangGraph搭建一个Agent应用.pdf",
+  "size": 17055084,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1755660648443-a54049c4-94c0-42aa-869d-a39e9ed9b101.zip": {
+  "name": "claude-demo.zip",
+  "size": 81109,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488265-920782c3-7ba1-4d1f-909d-c012cd8acbea.pdf": {
+  "name": "大模型PDF解析面试题.pdf",
+  "size": 2193622,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167073-6f53423e-95cc-4f49-b1fc-752397d33495.pdf": {
+  "name": "200.大模型思维链原理.pdf",
+  "size": 15896721,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325263-cbb2d2e1-9938-4c2a-96f1-6e2d47a6a14a.pdf": {
+  "name": "大模型负样本样本挖掘面试题.pdf",
+  "size": 672854,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167069-0bf8edd8-0399-4b5f-97ed-78e8e51a5ade.pdf": {
+  "name": "197.上下文工程：从对话到上下文工程.pdf",
+  "size": 10116213,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1747014138887-02193401-abee-4eea-847a-d676beb3b057.zip": {
+  "name": "quantization-demo.zip",
+  "size": 12069,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1746582257262-2a404109-dcf7-4f50-af92-dd6df1299e42.zip": {
+  "name": "prompt-causal.zip",
+  "size": 4833,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325260-90da2b13-dea1-495f-974e-20127ffbaeea.pdf": {
+  "name": "大模型损失函数面试题.pdf",
+  "size": 334651,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592235638-075abcbf-a02f-4ace-8429-3ef8196b40db.pdf": {
+  "name": "大模型Langchain面试题.pdf",
+  "size": 549283,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040489-b7d32ad2-2bc0-4139-af4e-c2e57c699635.pdf": {
+  "name": "265.提示词工程Prompt Engineering.pdf",
+  "size": 23010695,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910534-0288375c-8e70-49df-91f0-07aea5379384.pdf": {
+  "name": "181.RAG检索优化与实践指南.pdf",
+  "size": 11535224,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325215-56637ab9-0a10-4aac-a24b-3f9a09ad0c94.pdf": {
+  "name": "大模型强化学习PPO面试题.pdf",
+  "size": 252351,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040458-3db0c70b-ad2b-4413-a0ea-2c9ee5f89b89.pdf": {
+  "name": "264.Transformer是什么？Transformer如何工作.pdf",
+  "size": 22409855,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488211-2c6d36d2-babc-428a-be45-47db6b123b07.pdf": {
+  "name": "大模型文档对话面试题.pdf",
+  "size": 2216343,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038796-339cfc48-ee99-462c-901d-75efc8b407c4.pdf": {
+  "name": "278.多智能体架构深度解析.pdf",
+  "size": 14492522,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167070-67da8df4-8eb6-4ee5-a049-24dd23b76757.pdf": {
+  "name": "198.MoA是什么？它与MoE的区别是什么？.pdf",
+  "size": 9878347,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749879893993-83908bcd-a6ef-4463-949a-e6cf25a2322e.zip": {
+  "name": "worflow-demo.zip",
+  "size": 1057,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488194-31af3a9c-83a1-418f-9ea5-cee216f63489.pdf": {
+  "name": "大模型RAG相关面试题.pdf",
+  "size": 1381254,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666482-738aaf21-f9cb-4994-9308-21bc2659bbf9.pdf": {
+  "name": "分布式训练DeepSpeed面试题.pdf",
+  "size": 659781,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768271032543-0b684b46-6bf4-4c1d-a2ef-6546672ca150.pdf": {
+  "name": "253.多模态Vision Transformer.pdf",
+  "size": 16681398,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922265933-c20ba75b-76d0-4e18-892c-3e0961bbc871.pdf": {
+  "name": "增量预训练Pretrain样本拼接面试题.pdf",
+  "size": 353732,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270736966-6603a1de-3cac-4d4d-a68f-8616aad0686d.pdf": {
+  "name": "239.从0开始写一个AI Agent.pdf",
+  "size": 15702085,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922265868-110c92ea-2b46-45c2-bfb1-2b85146cbaa8.pdf": {
+  "name": "大模型显存问题面试题.pdf",
+  "size": 427236,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1755660648524-55b8ce80-1a9e-4ecc-b847-07330261340b.zip": {
+  "name": "claude-practices.zip",
+  "size": 11476,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1746582257175-1f7d444b-3357-4950-bdd3-d86e210bc372.zip": {
+  "name": "lora-train.zip",
+  "size": 22419,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764167055-c1624c93-70de-4f57-b8eb-d08217d334ba.pdf": {
+  "name": "199.模型微调数据集创建工具Easy dataset.pdf",
+  "size": 9670812,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488028-86ff32c2-557c-470d-a848-a90ab6a5ea7c.pdf": {
+  "name": "Graph RAG面试题.pdf",
+  "size": 895591,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488204-528f0e57-3f75-43fc-94e8-3cd9b6857884.pdf": {
+  "name": "RAG关键痛点和解决方案面试题.pdf",
+  "size": 1154332,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040458-1bf0a895-2052-4ed5-9f4b-039ba7fa271e.pdf": {
+  "name": "268.知识图谱嵌入技术.pdf",
+  "size": 17534406,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764511772371-a4557f39-07ac-43d7-b0e4-39411781f077.pdf": {
+  "name": "191.Llamalndex框架入门与实践指南.pdf",
+  "size": 12463749,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051696-54ac3a11-f805-4a50-9b20-45ee8065ba7b.pdf": {
+  "name": "234.如何评估RAG.pdf",
+  "size": 12166198,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1755660648475-baa27167-c905-4c05-a200-603de4c649a2.zip": {
+  "name": "claude-enterprise.zip",
+  "size": 29111,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749261173800-e844ac12-6f88-44f9-9033-c24a1b5d408d.zip": {
+  "name": "llamafactory-ds.zip",
+  "size": 20281,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740040510-17197a5a-d0ac-4b68-ac53-998f791e5eae.pdf": {
+  "name": "267.AI大模型企业落地实战指南.pdf",
+  "size": 20935978,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1749261174117-22dbfd6c-cd2d-4405-9d10-42e89f904d0e.zip": {
+  "name": "llamafactory-deploy.zip",
+  "size": 21649,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146051672-dc3f28bd-8a24-4946-93a9-ff7e78f2a6c9.pdf": {
+  "name": "236.多模态模型CLIP.pdf",
+  "size": 13436651,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761371666378-42595eb8-5344-43f1-a909-4e9f834be2e3.pdf": {
+  "name": "分布式训练之DataParallel面试题.pdf",
+  "size": 736932,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1756654381611-8950f6b5-8da6-4914-85f2-24c8ed4e6527.zip": {
+  "name": "mcp-ent.zip",
+  "size": 95224,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1768270736925-2bd8f855-b387-419a-961b-5b40de3285c8.pdf": {
+  "name": "241.RAG十种优化技巧.pdf",
+  "size": 14705058,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740042418-2bebcb3e-a26e-4b92-8fde-c57c2e52fe73.pdf": {
+  "name": "255.AI大模型预训练与微调.pdf",
+  "size": 14137273,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054202-d04ef32c-338a-433d-b922-ee396a4ce4a2.pdf": {
+  "name": "218.卷积神经网络CNN.pdf",
+  "size": 18475877,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325236-99d6464a-f916-4e40-8c95-91fee31c7410.pdf": {
+  "name": "对比学习相似度函数面试题.pdf",
+  "size": 171056,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146054322-9cf8e77f-abbb-48f1-9b49-c99b87c91485.pdf": {
+  "name": "212.如何实现一个RAG架构.pdf",
+  "size": 16809873,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1765764165533-6476757e-b925-4e89-bf8d-b666b9f7a989.pdf": {
+  "name": "207.零代码搭建Excel数据分析可视化小助手.pdf",
+  "size": 24318427,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1762592325228-7b134149-d532-4e6e-b44f-8e01f5b2cf1a.pdf": {
+  "name": "深度学习层归一化面试题.pdf",
+  "size": 474827,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910437-bad7b123-b4aa-48c1-bd3a-0fd823c1adaf.pdf": {
+  "name": "182.RAG和微调的应用场景.pdf",
+  "size": 10402879,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2026/pdf/2424104/1769740038772-0c42889b-1530-4aa0-82c5-696c3ef03eb2.pdf": {
+  "name": "279.17种RAG优化策略.pdf",
+  "size": 27644108,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1747014138731-7115e9cf-041b-410b-8bef-147b63f259c6.zip": {
+  "name": "ties-merge.zip",
+  "size": 8798,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1756179542750-b61f7280-795d-4fcb-92da-ac428b9cc7a8.zip": {
+  "name": "mcp-modularization.zip",
+  "size": 27457,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1761922265993-73efc415-ddb5-4ee1-9eef-3519ff323665.pdf": {
+  "name": "Accelerate分布式训练面试题.pdf",
+  "size": 438724,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1767146053234-a8048704-28f4-4a97-a568-3f273a61e08c.pdf": {
+  "name": "220.多Agent应用最佳实践.pdf",
+  "size": 15595996,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/zip/2424104/1748917156394-57d67237-2743-4e58-8a74-22df86fc9ee8.zip": {
+  "name": "llamafactory-quantization.zip",
+  "size": 2319,
+  "ext": "zip"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1764207910367-ff76ca1c-9668-4edb-ac5d-8f1b62322821.pdf": {
+  "name": "180.深度解析Agent两大认知框架.pdf",
+  "size": 13448070,
+  "ext": "pdf"
+ },
+ "https://www.yuque.com/attachments/yuque/0/2025/pdf/2424104/1759981488092-4d001d49-c2d7-4d9c-b382-26db34308c2c.pdf": {
+  "name": "大模型外挂知识库优化面试题.pdf",
+  "size": 707983,
+  "ext": "pdf"
+ }
+}

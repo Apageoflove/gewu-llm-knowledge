@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="格物 · AI大模型知识库 — 个人本地知识库 · 深度学习/Transformer/微调/RAG/Agent/RLHF/推理部署/分布式/多模态等 30+ 技术领域深度解析">
+<title>格物 · 大模型知识库</title>
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+<link rel="stylesheet" href="assets/style.css?v=28">
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- 顶部栏 -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <button class="icon-btn" id="btn-sidebar" aria-label="打开目录" title="目录 (目录结构)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <a class="brand" href="#/" id="brand">
+        <img class="brand-logo" src="assets/logo.svg?v=28" alt="格物 · 大模型知识库" width="30" height="30">
+        <span class="brand-name">格物<em>大模型知识库</em></span>
+      </a>
+      <nav class="crumb" id="crumb" aria-label="当前位置"></nav>
+      <div class="topbar-actions">
+        <button class="search-pill" id="btn-search" aria-label="搜索文档">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+          <span class="search-pill-text">搜索题目</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+        <button class="icon-btn" id="btn-theme" aria-label="切换主题" title="切换明暗主题">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="user-chip" id="btn-user" aria-label="账号" title="登录 / 账号">
+          <span class="avatar" aria-hidden="true">客</span>
+          <span class="uc-text">登录</span>
+        </button>
+      </div>
+    </div>
+    <div class="progress" id="progress" aria-hidden="true"><i></i></div>
+  </header>
+
+  <div class="layout">
+
+    <!-- 侧栏目录 -->
+    <aside class="sidebar" id="sidebar" aria-label="文档目录">
+      <div class="sidebar-top">
+        <div class="toc-filter-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+          <input type="text" id="toc-filter" placeholder="筛选目录…" autocomplete="off" spellcheck="false">
+          <button class="toc-filter-clear" id="toc-filter-clear" aria-label="清空筛选" hidden>×</button>
+        </div>
+        <div class="toc-count" id="toc-count"></div>
+      </div>
+      <nav class="toc" id="toc" aria-label="全部文档"></nav>
+      <div class="sidebar-foot" id="sidebar-foot"></div>
+      <div class="sidebar-resizer" id="sidebar-resizer" role="separator" aria-orientation="vertical" aria-label="拖拽调整侧栏宽度" title="拖拽调整宽度"></div>
+    </aside>
+    <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+
+    <!-- 主内容 -->
+    <main class="main" id="main">
+      <div class="view view-home" id="view-home" hidden></div>
+      <div class="view view-doc" id="view-doc" hidden>
+        <article class="doc" id="doc"></article>
+      </div>
+    </main>
+
+    <!-- 右侧本页大纲 -->
+    <aside class="outline" id="outline" aria-label="本页大纲" hidden>
+      <div class="outline-title">本页大纲</div>
+      <div class="outline-body" id="outline-body"></div>
+    </aside>
+  </div>
+
+  <button class="backtop" id="backtop" aria-label="回到顶部" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+</div>
+
+<!-- 搜索弹层 -->
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-backdrop" data-close></div>
+  <div class="search-panel" role="dialog" aria-modal="true" aria-label="搜索文档">
+    <div class="search-head">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+      <input type="text" id="search-input" placeholder="搜索标题或全文，如：LoRA、注意力、RAG…" autocomplete="off" spellcheck="false">
+      <kbd>Esc</kbd>
+    </div>
+    <div class="search-body" id="search-results"></div>
+    <div class="search-foot">
+      <span><kbd>↑↓</kbd> 选择</span>
+      <span><kbd>Enter</kbd> 打开</span>
+      <span><kbd>Esc</kbd> 关闭</span>
+      <span class="search-stat" id="search-stat"></span>
+    </div>
+  </div>
+</div>
+
+<!-- 图片灯箱 -->
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox-backdrop" data-close></div>
+  <figure class="lightbox-figure">
+    <img id="lightbox-img" alt="">
+    <figcaption id="lightbox-cap"></figcaption>
+  </figure>
+  <button class="lightbox-close" data-close aria-label="关闭">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+  </button>
+</div>
+
+<script src="data/meta.js"></script>
+<script src="data/docmap.js"></script>
+<script src="data/search_count.js"></script>
+<script src="assets/app.js?v=28" defer></script>
+</body>
+</html>

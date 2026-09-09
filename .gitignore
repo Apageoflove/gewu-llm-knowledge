@@ -1,0 +1,14 @@
+# 运行数据（init_db 会自动重建 app.db）
+_raw/app.db
+_raw/attachments/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 系统
+.DS_Store
+Thumbs.db
+nohup.out
+*.log
