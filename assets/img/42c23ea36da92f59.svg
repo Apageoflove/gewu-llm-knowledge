@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="697.32421875" height="376" id="mermaid-1774248634071" xmlns="http://www.w3.org/2000/svg" class="flowchart" style="max-width: 697.32421875px;" viewBox="0 0 697.32421875 376" role="graphics-document document" aria-roledescription="flowchart-v2"><style>
+
+        /* Playful Doodle Style - Hand-drawn whimsical design */
+        
+        /* Flowchart nodes - Soft colors with hand-drawn borders */
+        .node rect, .node polygon {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          ry: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .node circle {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+        }
+        
+        .node .label {
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+          fill: #000000 !important;
+          font-size: 15px;
+        }
+        
+        /* Alternate node colors - Doodle style palette */
+        .node:nth-child(2n) rect,
+        .node:nth-child(2n) circle,
+        .node:nth-child(2n) polygon {
+          fill: #dff4ff !important;
+        }
+        
+        .node:nth-child(3n) rect,
+        .node:nth-child(3n) circle,
+        .node:nth-child(3n) polygon {
+          fill: #f0e7ff !important;
+        }
+        
+        .node:nth-child(5n) rect,
+        .node:nth-child(5n) circle,
+        .node:nth-child(5n) polygon {
+          fill: #fff4e6 !important;
+        }
+        
+        .node:nth-child(7n) rect,
+        .node:nth-child(7n) circle,
+        .node:nth-child(7n) polygon {
+          fill: #e7f9f5 !important;
+        }
+        
+        /* Connection lines - Hand-drawn style */
+        .edgePath .path {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .arrowheadPath {
+          fill: #000000 !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+        }
+        
+        .edgeLabel {
+          color: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        
+        .edgeLabel rect {
+          fill: #ffffff !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 12px !important;
+          filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+        }
+        
+        /* Sequence Diagram - Doodle style */
+        .actor {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          ry: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .actor:nth-child(2n) {
+          fill: #dff4ff !important;
+        }
+        
+        .actor:nth-child(3n) {
+          fill: #f0e7ff !important;
+        }
+        
+        .actor:nth-child(4n) {
+          fill: #fff4e6 !important;
+        }
+        
+        .actor text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .actor-line, g line.actor-line, g path.actor-line {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          stroke-dasharray: 6 3 !important;
+        }
+        
+        .activation0, .activation1, .activation2 {
+          fill: #f0e7ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+          filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+        }
+        
+        .messageLine0, .messageLine1 {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          stroke-linecap: round;
+        }
+        
+        .messageText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        
+        #arrowhead path, .arrowheadPath {
+          fill: #000000 !important;
+          stroke: #000000 !important;
+        }
+        
+        /* Note boxes - Soft yellow */
+        .note {
+          fill: #fff4e6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+          ry: 15px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .noteText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        /* Loop/Alt/Opt boxes - Soft purple */
+        .labelBox {
+          fill: #f0e7ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+          ry: 15px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .labelText, .loopText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .loopLine {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+        }
+        
+        /* Cluster/Subgraph styling - Soft blue */
+        .cluster rect {
+          fill: #dff4ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 25px !important;
+          ry: 25px !important;
+          filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.15));
+        }
+        
+        .cluster text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        /* State diagram */
+        .statediagram-state rect,
+        .statediagram-state .state-inner {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .statediagram-state:nth-child(2n) rect,
+        .statediagram-state:nth-child(2n) .state-inner {
+          fill: #dff4ff !important;
+        }
+        
+        .statediagram-state:nth-child(3n) rect,
+        .statediagram-state:nth-child(3n) .state-inner {
+          fill: #f0e7ff !important;
+        }
+        
+        .statediagram-state:nth-child(5n) rect,
+        .statediagram-state:nth-child(5n) .state-inner {
+          fill: #fff4e6 !important;
+        }
+        
+        .stateLabel text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .transition {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        /* Class Diagram */
+        .classGroup rect {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .classGroup:nth-child(2n) rect {
+          fill: #dff4ff !important;
+        }
+        
+        .classGroup:nth-child(3n) rect {
+          fill: #f0e7ff !important;
+        }
+        
+        .classGroup line {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+        }
+        
+        .classLabel .label {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .classLabel .box {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+        }
+        
+        .relationshipLine {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .relationshipLabelBox {
+          fill: #ffffff !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 10px !important;
+        }
+        
+        /* ER Diagram */
+        .er.entityBox {
+          fill: #dff4ff !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 20px !important;
+          filter: drop-shadow(4px 4px 0px rgba(0,0,0,0.2));
+        }
+        
+        .er.entityBox:nth-child(2n) {
+          fill: #ffdff6 !important;
+        }
+        
+        .er.entityBox:nth-child(3n) {
+          fill: #f0e7ff !important;
+        }
+        
+        .er.entityLabel,
+        .er.relationshipLabel {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .er .relationshipLine {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .er .relationshipLabelBox {
+          fill: #ffffff !important;
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 10px !important;
+        }
+        
+        /* Gantt Chart */
+        .titleText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+          font-size: 20px;
+        }
+        
+        .grid .tick text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-size: 13px;
+        }
+        
+        .grid line {
+          stroke: #e0e0e0 !important;
+          stroke-width: 1px !important;
+          opacity: 0.5;
+        }
+        
+        .taskText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .taskTextOutsideRight,
+        .taskTextOutsideLeft {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .task0, .task1, .task2, .task3 {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 12px !important;
+        }
+        
+        .task0 {
+          fill: #ffdff6 !important;
+        }
+        
+        .task1 {
+          fill: #dff4ff !important;
+        }
+        
+        .task2 {
+          fill: #f0e7ff !important;
+        }
+        
+        .task3 {
+          fill: #fff4e6 !important;
+        }
+        
+        .section0, .section1, .section2, .section3 {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+          font-size: 14px;
+        }
+        
+        .sectionTitle0, .sectionTitle1, .sectionTitle2, .sectionTitle3 {
+          fill: #ffffff !important;
+        }
+        
+        .done0, .done1, .done2, .done3 {
+          stroke: #22c55e !important;
+          stroke-width: 3px !important;
+          fill: #bbf7d0 !important;
+        }
+        
+        .active0, .active1, .active2, .active3 {
+          stroke: #3b82f6 !important;
+          stroke-width: 3px !important;
+          fill: #bfdbfe !important;
+        }
+        
+        .crit0, .crit1, .crit2, .crit3 {
+          stroke: #ef4444 !important;
+          stroke-width: 3px !important;
+          fill: #fecaca !important;
+        }
+        
+        .activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 {
+          stroke: #9333ea !important;
+          stroke-width: 3px !important;
+          fill: #e9d5ff !important;
+        }
+        
+        /* Pie Chart */
+        .pieCircle {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .pieTitleText {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+          font-size: 20px;
+        }
+        
+        .slice {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1));
+        }
+        
+        .slice:nth-child(1) {
+          fill: #ffdff6 !important;
+        }
+        
+        .slice:nth-child(2) {
+          fill: #dff4ff !important;
+        }
+        
+        .slice:nth-child(3) {
+          fill: #f0e7ff !important;
+        }
+        
+        .slice:nth-child(4) {
+          fill: #fff4e6 !important;
+        }
+        
+        .slice:nth-child(5) {
+          fill: #e7f9f5 !important;
+        }
+        
+        .slice:nth-child(6) {
+          fill: #fef3c7 !important;
+        }
+        
+        .pieOuterCircle {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          fill: none;
+        }
+        
+        .legend text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        
+        .legend rect {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 6px !important;
+        }
+        
+        /* Journey Diagram */
+        .journey-section {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          fill: #f0e7ff !important;
+          rx: 15px !important;
+        }
+        
+        .task-section {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 12px !important;
+        }
+        
+        .task-section:nth-child(2n) {
+          fill: #dff4ff !important;
+        }
+        
+        .task-section:nth-child(3n) {
+          fill: #fff4e6 !important;
+        }
+        
+        /* XYChart styles - Doodle theme colors */
+        .line-plot-0 path {
+          stroke: #ec4899 !important;
+          stroke-width: 4px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .line-plot-1 path {
+          stroke: #3b82f6 !important;
+          stroke-width: 4px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .line-plot-2 path {
+          stroke: #9333ea !important;
+          stroke-width: 4px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .bar-plot-0 rect {
+          fill: #fce7f3 !important;
+          stroke: #ec4899 !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+        }
+        
+        .bar-plot-1 rect {
+          fill: #dbeafe !important;
+          stroke: #3b82f6 !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+        }
+        
+        .bar-plot-2 rect {
+          fill: #f3e8ff !important;
+          stroke: #9333ea !important;
+          stroke-width: 3px !important;
+          rx: 8px !important;
+        }
+        
+        .ticks path {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+        }
+        
+        .chart-title text {
+          fill: #000000 !important;
+          font-weight: 700 !important;
+          font-size: 20px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+        }
+        
+        .left-axis .label text, .bottom-axis .label text {
+          fill: #000000 !important;
+          font-size: 14px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .left-axis .title text, .bottom-axis .title text {
+          fill: #000000 !important;
+          font-size: 16px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 700;
+        }
+        
+        .legend text {
+          fill: #000000 !important;
+          font-size: 14px !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .legend rect {
+          stroke: #000000 !important;
+          stroke-width: 2px !important;
+          rx: 6px !important;
+        }
+        
+        /* Git Graph */
+        .commit-id, .commit-msg, .branch-label {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+        
+        .commit {
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+        }
+        
+        .commit0 {
+          fill: #ffdff6 !important;
+        }
+        
+        .commit1 {
+          fill: #dff4ff !important;
+        }
+        
+        .commit2 {
+          fill: #f0e7ff !important;
+        }
+        
+        .commit3 {
+          fill: #fff4e6 !important;
+        }
+        
+        .commit-highlight-outer {
+          fill: #fbbf24;
+          opacity: 0.3;
+        }
+        
+        .commit-highlight-inner {
+          fill: #fbbf24;
+          opacity: 0.5;
+          stroke: #f59e0b;
+        }
+        
+        .branch path {
+          stroke-width: 3px !important;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        
+        .branch.branch0 {
+          stroke: #ec4899 !important;
+        }
+        
+        .branch.branch1 {
+          stroke: #3b82f6 !important;
+        }
+        
+        .branch.branch2 {
+          stroke: #9333ea !important;
+        }
+        
+        .branch.branch3 {
+          stroke: #f59e0b !important;
+        }
+        
+        /* Timeline */
+        .timeline-event {
+          fill: #ffdff6 !important;
+          stroke: #000000 !important;
+          stroke-width: 3px !important;
+          rx: 15px !important;
+          filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.15));
+        }
+        
+        .timeline-event:nth-child(2n) {
+          fill: #dff4ff !important;
+        }
+        
+        .timeline-event:nth-child(3n) {
+          fill: #f0e7ff !important;
+        }
+        
+        .timeline-event-text {
+          fill: #000000 !important;
+          font-family: "Comic Neue", "Comic Sans MS", "Noto Sans SC", cursive, sans-serif;
+          font-weight: 600;
+        }
+      
+</style><style>#mermaid-1774248634071{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:15px;fill:#000000;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#mermaid-1774248634071 .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#mermaid-1774248634071 .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#mermaid-1774248634071 .error-icon{fill:#f0e7ff;}#mermaid-1774248634071 .error-text{fill:#0f1800;stroke:#0f1800;}#mermaid-1774248634071 .edge-thickness-normal{stroke-width:1px;}#mermaid-1774248634071 .edge-thickness-thick{stroke-width:3.5px;}#mermaid-1774248634071 .edge-pattern-solid{stroke-dasharray:0;}#mermaid-1774248634071 .edge-thickness-invisible{stroke-width:0;fill:none;}#mermaid-1774248634071 .edge-pattern-dashed{stroke-dasharray:3;}#mermaid-1774248634071 .edge-pattern-dotted{stroke-dasharray:2;}#mermaid-1774248634071 .marker{fill:#000000;stroke:#000000;}#mermaid-1774248634071 .marker.cross{stroke:#000000;}#mermaid-1774248634071 svg{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:15px;}#mermaid-1774248634071 p{margin:0;}#mermaid-1774248634071 .label{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;color:#000000;}#mermaid-1774248634071 .cluster-label text{fill:#0f1800;}#mermaid-1774248634071 .cluster-label span{color:#0f1800;}#mermaid-1774248634071 .cluster-label span p{background-color:transparent;}#mermaid-1774248634071 .label text,#mermaid-1774248634071 span{fill:#000000;color:#000000;}#mermaid-1774248634071 .node rect,#mermaid-1774248634071 .node circle,#mermaid-1774248634071 .node ellipse,#mermaid-1774248634071 .node polygon,#mermaid-1774248634071 .node path{fill:#ffdff6;stroke:#000000;stroke-width:1px;}#mermaid-1774248634071 .rough-node .label text,#mermaid-1774248634071 .node .label text,#mermaid-1774248634071 .image-shape .label,#mermaid-1774248634071 .icon-shape .label{text-anchor:middle;}#mermaid-1774248634071 .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#mermaid-1774248634071 .rough-node .label,#mermaid-1774248634071 .node .label,#mermaid-1774248634071 .image-shape .label,#mermaid-1774248634071 .icon-shape .label{text-align:center;}#mermaid-1774248634071 .node.clickable{cursor:pointer;}#mermaid-1774248634071 .root .anchor path{fill:#000000!important;stroke-width:0;stroke:#000000;}#mermaid-1774248634071 .arrowheadPath{fill:#001107;}#mermaid-1774248634071 .edgePath .path{stroke:#000000;stroke-width:2.0px;}#mermaid-1774248634071 .flowchart-link{stroke:#000000;fill:none;}#mermaid-1774248634071 .edgeLabel{background-color:#dff4ff;text-align:center;}#mermaid-1774248634071 .edgeLabel p{background-color:#dff4ff;}#mermaid-1774248634071 .edgeLabel rect{opacity:0.5;background-color:#dff4ff;fill:#dff4ff;}#mermaid-1774248634071 .labelBkg{background-color:rgba(223, 244, 255, 0.5);}#mermaid-1774248634071 .cluster rect{fill:#f0e7ff;stroke:hsl(262.5, 60%, 85.2941176471%);stroke-width:1px;}#mermaid-1774248634071 .cluster text{fill:#0f1800;}#mermaid-1774248634071 .cluster span{color:#0f1800;}#mermaid-1774248634071 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:12px;background:#f0e7ff;border:1px solid hsl(262.5, 60%, 85.2941176471%);border-radius:2px;pointer-events:none;z-index:100;}#mermaid-1774248634071 .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#000000;}#mermaid-1774248634071 rect.text{fill:none;stroke-width:0;}#mermaid-1774248634071 .icon-shape,#mermaid-1774248634071 .image-shape{background-color:#dff4ff;text-align:center;}#mermaid-1774248634071 .icon-shape p,#mermaid-1774248634071 .image-shape p{background-color:#dff4ff;padding:2px;}#mermaid-1774248634071 .icon-shape rect,#mermaid-1774248634071 .image-shape rect{opacity:0.5;background-color:#dff4ff;fill:#dff4ff;}#mermaid-1774248634071 .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#mermaid-1774248634071 .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#mermaid-1774248634071 .node rect,#mermaid-1774248634071 .node polygon{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;ry:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .node circle{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;filter:drop-shadow(3px 3px 0px rgba(0,0,0,0.15));}#mermaid-1774248634071 .node .label{font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;fill:#000000!important;font-size:15px;}#mermaid-1774248634071 .node:nth-child(2n) rect,#mermaid-1774248634071 .node:nth-child(2n) circle,#mermaid-1774248634071 .node:nth-child(2n) polygon{fill:#dff4ff!important;}#mermaid-1774248634071 .node:nth-child(3n) rect,#mermaid-1774248634071 .node:nth-child(3n) circle,#mermaid-1774248634071 .node:nth-child(3n) polygon{fill:#f0e7ff!important;}#mermaid-1774248634071 .node:nth-child(5n) rect,#mermaid-1774248634071 .node:nth-child(5n) circle,#mermaid-1774248634071 .node:nth-child(5n) polygon{fill:#fff4e6!important;}#mermaid-1774248634071 .node:nth-child(7n) rect,#mermaid-1774248634071 .node:nth-child(7n) circle,#mermaid-1774248634071 .node:nth-child(7n) polygon{fill:#e7f9f5!important;}#mermaid-1774248634071 .edgePath .path{stroke:#000000!important;stroke-width:3px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248634071 .arrowheadPath{fill:#000000!important;stroke:#000000!important;stroke-width:2px!important;}#mermaid-1774248634071 .edgeLabel{color:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:14px;font-weight:600;}#mermaid-1774248634071 .edgeLabel rect{fill:#ffffff!important;stroke:#000000!important;stroke-width:2px!important;rx:12px!important;filter:drop-shadow(2px 2px 0px rgba(0,0,0,0.1));}#mermaid-1774248634071 .actor{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;ry:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .actor:nth-child(2n){fill:#dff4ff!important;}#mermaid-1774248634071 .actor:nth-child(3n){fill:#f0e7ff!important;}#mermaid-1774248634071 .actor:nth-child(4n){fill:#fff4e6!important;}#mermaid-1774248634071 .actor text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .actor-line,#mermaid-1774248634071 g line.actor-line,#mermaid-1774248634071 g path.actor-line{stroke:#000000!important;stroke-width:2px!important;stroke-dasharray:6 3!important;}#mermaid-1774248634071 .activation0,#mermaid-1774248634071 .activation1,#mermaid-1774248634071 .activation2{fill:#f0e7ff!important;stroke:#000000!important;stroke-width:3px!important;rx:8px!important;filter:drop-shadow(3px 3px 0px rgba(0,0,0,0.15));}#mermaid-1774248634071 .messageLine0,#mermaid-1774248634071 .messageLine1{stroke:#000000!important;stroke-width:3px!important;stroke-linecap:round;}#mermaid-1774248634071 .messageText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;font-size:14px;}#mermaid-1774248634071 #arrowhead path,#mermaid-1774248634071 .arrowheadPath{fill:#000000!important;stroke:#000000!important;}#mermaid-1774248634071 .note{fill:#fff4e6!important;stroke:#000000!important;stroke-width:3px!important;rx:15px!important;ry:15px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .noteText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 .labelBox{fill:#f0e7ff!important;stroke:#000000!important;stroke-width:3px!important;rx:15px!important;ry:15px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .labelText,#mermaid-1774248634071 .loopText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .loopLine{stroke:#000000!important;stroke-width:3px!important;rx:15px!important;}#mermaid-1774248634071 .cluster rect{fill:#dff4ff!important;stroke:#000000!important;stroke-width:3px!important;rx:25px!important;ry:25px!important;filter:drop-shadow(5px 5px 0px rgba(0,0,0,0.15));}#mermaid-1774248634071 .cluster text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .statediagram-state rect,#mermaid-1774248634071 .statediagram-state .state-inner{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .statediagram-state:nth-child(2n) rect,#mermaid-1774248634071 .statediagram-state:nth-child(2n) .state-inner{fill:#dff4ff!important;}#mermaid-1774248634071 .statediagram-state:nth-child(3n) rect,#mermaid-1774248634071 .statediagram-state:nth-child(3n) .state-inner{fill:#f0e7ff!important;}#mermaid-1774248634071 .statediagram-state:nth-child(5n) rect,#mermaid-1774248634071 .statediagram-state:nth-child(5n) .state-inner{fill:#fff4e6!important;}#mermaid-1774248634071 .stateLabel text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .transition{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248634071 .classGroup rect{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .classGroup:nth-child(2n) rect{fill:#dff4ff!important;}#mermaid-1774248634071 .classGroup:nth-child(3n) rect{fill:#f0e7ff!important;}#mermaid-1774248634071 .classGroup line{stroke:#000000!important;stroke-width:2px!important;}#mermaid-1774248634071 .classLabel .label{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .classLabel .box{stroke:#000000!important;stroke-width:3px!important;rx:20px!important;}#mermaid-1774248634071 .relationshipLine{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248634071 .relationshipLabelBox{fill:#ffffff!important;stroke:#000000!important;stroke-width:2px!important;rx:10px!important;}#mermaid-1774248634071 .er.entityBox{fill:#dff4ff!important;stroke:#000000!important;stroke-width:3px!important;rx:20px!important;filter:drop-shadow(4px 4px 0px rgba(0,0,0,0.2));}#mermaid-1774248634071 .er.entityBox:nth-child(2n){fill:#ffdff6!important;}#mermaid-1774248634071 .er.entityBox:nth-child(3n){fill:#f0e7ff!important;}#mermaid-1774248634071 .er.entityLabel,#mermaid-1774248634071 .er.relationshipLabel{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .er .relationshipLine{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248634071 .er .relationshipLabelBox{fill:#ffffff!important;stroke:#000000!important;stroke-width:2px!important;rx:10px!important;}#mermaid-1774248634071 .titleText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;font-size:20px;}#mermaid-1774248634071 .grid .tick text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-size:13px;}#mermaid-1774248634071 .grid line{stroke:#e0e0e0!important;stroke-width:1px!important;opacity:0.5;}#mermaid-1774248634071 .taskText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 .taskTextOutsideRight,#mermaid-1774248634071 .taskTextOutsideLeft{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 .task0,#mermaid-1774248634071 .task1,#mermaid-1774248634071 .task2,#mermaid-1774248634071 .task3{stroke:#000000!important;stroke-width:3px!important;rx:12px!important;}#mermaid-1774248634071 .task0{fill:#ffdff6!important;}#mermaid-1774248634071 .task1{fill:#dff4ff!important;}#mermaid-1774248634071 .task2{fill:#f0e7ff!important;}#mermaid-1774248634071 .task3{fill:#fff4e6!important;}#mermaid-1774248634071 .section0,#mermaid-1774248634071 .section1,#mermaid-1774248634071 .section2,#mermaid-1774248634071 .section3{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;font-size:14px;}#mermaid-1774248634071 .sectionTitle0,#mermaid-1774248634071 .sectionTitle1,#mermaid-1774248634071 .sectionTitle2,#mermaid-1774248634071 .sectionTitle3{fill:#ffffff!important;}#mermaid-1774248634071 .done0,#mermaid-1774248634071 .done1,#mermaid-1774248634071 .done2,#mermaid-1774248634071 .done3{stroke:#22c55e!important;stroke-width:3px!important;fill:#bbf7d0!important;}#mermaid-1774248634071 .active0,#mermaid-1774248634071 .active1,#mermaid-1774248634071 .active2,#mermaid-1774248634071 .active3{stroke:#3b82f6!important;stroke-width:3px!important;fill:#bfdbfe!important;}#mermaid-1774248634071 .crit0,#mermaid-1774248634071 .crit1,#mermaid-1774248634071 .crit2,#mermaid-1774248634071 .crit3{stroke:#ef4444!important;stroke-width:3px!important;fill:#fecaca!important;}#mermaid-1774248634071 .activeCrit0,#mermaid-1774248634071 .activeCrit1,#mermaid-1774248634071 .activeCrit2,#mermaid-1774248634071 .activeCrit3{stroke:#9333ea!important;stroke-width:3px!important;fill:#e9d5ff!important;}#mermaid-1774248634071 .pieCircle{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248634071 .pieTitleText{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;font-size:20px;}#mermaid-1774248634071 .slice{stroke:#000000!important;stroke-width:3px!important;filter:drop-shadow(2px 2px 0px rgba(0,0,0,0.1));}#mermaid-1774248634071 .slice:nth-child(1){fill:#ffdff6!important;}#mermaid-1774248634071 .slice:nth-child(2){fill:#dff4ff!important;}#mermaid-1774248634071 .slice:nth-child(3){fill:#f0e7ff!important;}#mermaid-1774248634071 .slice:nth-child(4){fill:#fff4e6!important;}#mermaid-1774248634071 .slice:nth-child(5){fill:#e7f9f5!important;}#mermaid-1774248634071 .slice:nth-child(6){fill:#fef3c7!important;}#mermaid-1774248634071 .pieOuterCircle{stroke:#000000!important;stroke-width:3px!important;fill:none;}#mermaid-1774248634071 .legend text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;font-size:14px;}#mermaid-1774248634071 .legend rect{stroke:#000000!important;stroke-width:2px!important;rx:6px!important;}#mermaid-1774248634071 .journey-section{stroke:#000000!important;stroke-width:3px!important;fill:#f0e7ff!important;rx:15px!important;}#mermaid-1774248634071 .task-section{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:12px!important;}#mermaid-1774248634071 .task-section:nth-child(2n){fill:#dff4ff!important;}#mermaid-1774248634071 .task-section:nth-child(3n){fill:#fff4e6!important;}#mermaid-1774248634071 .line-plot-0 path{stroke:#ec4899!important;stroke-width:4px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248634071 .line-plot-1 path{stroke:#3b82f6!important;stroke-width:4px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248634071 .line-plot-2 path{stroke:#9333ea!important;stroke-width:4px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248634071 .bar-plot-0 rect{fill:#fce7f3!important;stroke:#ec4899!important;stroke-width:3px!important;rx:8px!important;}#mermaid-1774248634071 .bar-plot-1 rect{fill:#dbeafe!important;stroke:#3b82f6!important;stroke-width:3px!important;rx:8px!important;}#mermaid-1774248634071 .bar-plot-2 rect{fill:#f3e8ff!important;stroke:#9333ea!important;stroke-width:3px!important;rx:8px!important;}#mermaid-1774248634071 .ticks path{stroke:#000000!important;stroke-width:2px!important;}#mermaid-1774248634071 .chart-title text{fill:#000000!important;font-weight:700!important;font-size:20px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;}#mermaid-1774248634071 .left-axis .label text,#mermaid-1774248634071 .bottom-axis .label text{fill:#000000!important;font-size:14px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 .left-axis .title text,#mermaid-1774248634071 .bottom-axis .title text{fill:#000000!important;font-size:16px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:700;}#mermaid-1774248634071 .legend text{fill:#000000!important;font-size:14px!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 .legend rect{stroke:#000000!important;stroke-width:2px!important;rx:6px!important;}#mermaid-1774248634071 .commit-id,#mermaid-1774248634071 .commit-msg,#mermaid-1774248634071 .branch-label{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 .commit{stroke:#000000!important;stroke-width:3px!important;}#mermaid-1774248634071 .commit0{fill:#ffdff6!important;}#mermaid-1774248634071 .commit1{fill:#dff4ff!important;}#mermaid-1774248634071 .commit2{fill:#f0e7ff!important;}#mermaid-1774248634071 .commit3{fill:#fff4e6!important;}#mermaid-1774248634071 .commit-highlight-outer{fill:#fbbf24;opacity:0.3;}#mermaid-1774248634071 .commit-highlight-inner{fill:#fbbf24;opacity:0.5;stroke:#f59e0b;}#mermaid-1774248634071 .branch path{stroke-width:3px!important;stroke-linecap:round;stroke-linejoin:round;}#mermaid-1774248634071 .branch.branch0{stroke:#ec4899!important;}#mermaid-1774248634071 .branch.branch1{stroke:#3b82f6!important;}#mermaid-1774248634071 .branch.branch2{stroke:#9333ea!important;}#mermaid-1774248634071 .branch.branch3{stroke:#f59e0b!important;}#mermaid-1774248634071 .timeline-event{fill:#ffdff6!important;stroke:#000000!important;stroke-width:3px!important;rx:15px!important;filter:drop-shadow(3px 3px 0px rgba(0,0,0,0.15));}#mermaid-1774248634071 .timeline-event:nth-child(2n){fill:#dff4ff!important;}#mermaid-1774248634071 .timeline-event:nth-child(3n){fill:#f0e7ff!important;}#mermaid-1774248634071 .timeline-event-text{fill:#000000!important;font-family:"Comic Neue","Comic Sans MS","Noto Sans SC",cursive,sans-serif;font-weight:600;}#mermaid-1774248634071 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="mermaid-1774248634071_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248634071_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248634071_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248634071_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248634071_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="mermaid-1774248634071_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M68,60.5L68,64.667C68,68.833,68,77.167,68,84.833C68,92.5,68,99.5,68,103L68,106.5" id="L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6NjgsInkiOjYwLjV9LHsieCI6NjgsInkiOjg1LjV9LHsieCI6NjgsInkiOjExMC41fV0=" marker-end="url(#mermaid-1774248634071_flowchart-v2-pointEnd)"/><path d="M68,163L68,167.167C68,171.333,68,179.667,99.313,190.038C130.626,200.409,193.251,212.817,224.564,219.022L255.877,225.226" id="L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6NjgsInkiOjE2M30seyJ4Ijo2OCwieSI6MTg4fSx7IngiOjI1OS44MDA3ODEyNSwieSI6MjI2LjAwMzI5NjAzMTE3MDcyfV0=" marker-end="url(#mermaid-1774248634071_flowchart-v2-pointEnd)"/><path d="M326.656,265.5L326.656,269.667C326.656,273.833,326.656,282.167,326.656,289.833C326.656,297.5,326.656,304.5,326.656,308L326.656,311.5" id="L_C_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_D_0" data-points="W3sieCI6MzI2LjY1NjI1LCJ5IjoyNjUuNX0seyJ4IjozMjYuNjU2MjUsInkiOjI5MC41fSx7IngiOjMyNi42NTYyNSwieSI6MzE1LjV9XQ==" marker-end="url(#mermaid-1774248634071_flowchart-v2-pointEnd)"/><path d="M239.918,163L239.918,167.167C239.918,171.333,239.918,179.667,246.396,187.661C252.874,195.655,265.83,203.31,272.308,207.138L278.786,210.965" id="L_R1_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_R1_C_0" data-points="W3sieCI6MjM5LjkxNzk2ODc1LCJ5IjoxNjN9LHsieCI6MjM5LjkxNzk2ODc1LCJ5IjoxODh9LHsieCI6MjgyLjIyOTMyNTQ1NzMxNzEsInkiOjIxM31d" marker-end="url(#mermaid-1774248634071_flowchart-v2-pointEnd)"/><path d="M413.395,163L413.395,167.167C413.395,171.333,413.395,179.667,406.917,187.661C400.439,195.655,387.483,203.31,381.005,207.138L374.527,210.965" id="L_R2_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_R2_C_0" data-points="W3sieCI6NDEzLjM5NDUzMTI1LCJ5IjoxNjN9LHsieCI6NDEzLjM5NDUzMTI1LCJ5IjoxODh9LHsieCI6MzcxLjA4MzE3NDU0MjY4MjksInkiOjIxM31d" marker-end="url(#mermaid-1774248634071_flowchart-v2-pointEnd)"/><path d="M603.82,163L603.82,167.167C603.82,171.333,603.82,179.667,569.424,190.193C535.029,200.72,466.237,213.44,431.841,219.8L397.445,226.161" id="L_R3_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_R3_C_0" data-points="W3sieCI6NjAzLjgyMDMxMjUsInkiOjE2M30seyJ4Ijo2MDMuODIwMzEyNSwieSI6MTg4fSx7IngiOjM5My41MTE3MTg3NSwieSI6MjI2Ljg4Nzg1MzM5Nzk3NjE2fV0=" marker-end="url(#mermaid-1774248634071_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_B_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C_D_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_R1_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_R2_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_R3_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="flowchart-A-0" transform="translate(68, 34.25)"><rect class="basic label-container" style="" x="-60" y="-26.25" width="120" height="52.5"/><g class="label" style="" transform="translate(-30, -11.25)"><rect/><foreignObject width="60" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>用户请求</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-B-1" transform="translate(68, 136.75)"><rect class="basic label-container" style="" x="-53.36328125" y="-26.25" width="106.7265625" height="52.5"/><g class="label" style="" transform="translate(-23.36328125, -11.25)"><rect/><foreignObject width="46.7265625" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>Claude</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-C-3" transform="translate(326.65625, 239.25)"><rect class="basic label-container" style="" x="-66.85546875" y="-26.25" width="133.7109375" height="52.5"/><g class="label" style="" transform="translate(-36.85546875, -11.25)"><rect/><foreignObject width="73.7109375" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>应用 Rules</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-D-5" transform="translate(326.65625, 341.75)"><rect class="basic label-container" style="" x="-60" y="-26.25" width="120" height="52.5"/><g class="label" style="" transform="translate(-30, -11.25)"><rect/><foreignObject width="60" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>生成输出</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-R1-6" transform="translate(239.91796875, 136.75)"><rect class="basic label-container" style="" x="-68.5546875" y="-26.25" width="137.109375" height="52.5"/><g class="label" style="" transform="translate(-38.5546875, -11.25)"><rect/><foreignObject width="77.109375" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>code-style</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-R2-8" transform="translate(413.39453125, 136.75)"><rect class="basic label-container" style="" x="-54.921875" y="-26.25" width="109.84375" height="52.5"/><g class="label" style="" transform="translate(-24.921875, -11.25)"><rect/><foreignObject width="49.84375" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>testing</p></span></div></foreignObject></g></g><g class="node default" id="flowchart-R3-10" transform="translate(603.8203125, 136.75)"><rect class="basic label-container" style="" x="-85.50390625" y="-26.25" width="171.0078125" height="52.5"/><g class="label" style="" transform="translate(-55.50390625, -11.25)"><rect/><foreignObject width="111.0078125" height="22.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="nodeLabel"><p>api-conventions</p></span></div></foreignObject></g></g></g></g></g></svg>
