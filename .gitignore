@@ -12,3 +12,8 @@ __pycache__/
 Thumbs.db
 nohup.out
 *.log
+
+# 发布素材（本地保留，不进仓库）
+PROMO.md
+PROMO.html
+发布素材/
