@@ -1042,31 +1042,47 @@
         if (!d.ok) { $("admin-body").textContent = d.err || "加载失败"; return; }
         var myEmail = FAI.user ? FAI.user.email : "";
         var myRow = d.users.find(function (u) { return u.email === myEmail; });
+        var I = {
+          users: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+          pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>',
+          star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+          clear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/></svg>',
+          key: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>',
+          trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>'
+        };
         var html = '<div class="admin-stats">' +
-          '<div class="admin-stat"><b>' + d.total_users + "</b><span>注册用户总数（全站）</span></div>" +
-          '<div class="admin-stat"><b>' + d.total_notes + "</b><span>标注总数（全站所有用户合计）</span></div>" +
-          '<div class="admin-stat"><b>' + (myRow ? myRow.notes : 0) + "</b><span>当前账号（" + esc((myEmail.split("@")[0] || "")) + "）的标注</span></div>" +
+          '<div class="ad-stat"><span class="ad-ico">' + I.users + '</span><div class="ad-meta"><b>' + d.total_users + '</b><span>注册用户 · 全站</span></div></div>' +
+          '<div class="ad-stat"><span class="ad-ico">' + I.pen + '</span><div class="ad-meta"><b>' + d.total_notes + '</b><span>标注总数 · 全站</span></div></div>' +
+          '<div class="ad-stat"><span class="ad-ico">' + I.star + '</span><div class="ad-meta"><b>' + (myRow ? myRow.notes : 0) + '</b><span>我的标注 · ' + esc((myEmail.split("@")[0] || "")) + '</span></div></div>' +
           "</div>";
         html += '<div class="admin-table-wrap"><table class="admin-table"><thead><tr>' +
-          "<th>ID</th><th>邮箱</th><th>角色</th><th>注册 IP</th><th>注册地</th><th>注册时间</th><th>标注数</th><th>管理</th>" +
+          '<th>用户</th><th>角色</th><th>注册 IP</th><th>注册地</th><th>注册时间</th><th class="ta-c">标注</th><th class="ta-r">管理</th>' +
           "</tr></thead><tbody>";
-        d.users.forEach(function (u) {
-          html += "<tr><td>" + u.id + "</td><td>" + esc(u.email) + "</td><td>" +
-            (u.is_admin ? '<span class="admin-badge">管理员</span>' : "用户") + "</td><td>" +
-            esc(u.reg_ip || "-") + "</td><td>" + esc(u.reg_loc || "-") + "</td><td>" +
-            esc(u.created_at || "-") + "</td><td>" + (u.notes || 0) + "</td><td>";
+        d.users.forEach(function (u, ui) {
+          var initial = ((u.email || "?")[0] || "?").toUpperCase();
+          html += "<tr>" +
+            '<td class="ad-user"><span class="ad-avatar c' + ((ui % 3) + 1) + '">' + esc(initial) + '</span>' +
+            '<span class="ad-mail-wrap"><span class="ad-mail">' + esc(u.email) + '</span><em>#' + u.id + "</em></span></td>" +
+            "<td>" + (u.is_admin ? '<span class="admin-badge">管理员</span>' : '<span class="ad-badge-user">用户</span>') + "</td>" +
+            '<td class="ad-mono">' + esc(u.reg_ip || "-") + "</td>" +
+            '<td class="ad-dim">' + esc(u.reg_loc || "-") + "</td>" +
+            '<td class="ad-dim">' + esc(u.created_at || "-") + "</td>" +
+            '<td class="ta-c"><span class="ad-pill">' + (u.notes || 0) + "</span></td>" +
+            '<td class="ta-r">';
           if (u.is_admin) {
             html += '<span class="adm-na">—</span>';
           } else {
             html += '<span class="adm-ops">' +
-              '<button type="button" class="adm-btn" data-op="clear" data-id="' + u.id + '" data-email="' + esc(u.email) + '">清空数据</button>' +
-              '<button type="button" class="adm-btn" data-op="reset" data-id="' + u.id + '" data-email="' + esc(u.email) + '">重置密码</button>' +
-              '<button type="button" class="adm-btn danger" data-op="del" data-id="' + u.id + '" data-email="' + esc(u.email) + '">删除</button>' +
+              '<button type="button" class="adm-btn" data-op="clear" data-id="' + u.id + '" data-email="' + esc(u.email) + '">' + I.clear + "清空</button>" +
+              '<button type="button" class="adm-btn" data-op="reset" data-id="' + u.id + '" data-email="' + esc(u.email) + '">' + I.key + "重置密码</button>" +
+              '<button type="button" class="adm-btn danger" data-op="del" data-id="' + u.id + '" data-email="' + esc(u.email) + '">' + I.trash + "删除</button>" +
               "</span>";
           }
           html += "</td></tr>";
         });
-        html += "</tbody></table></div>";
+        html += "</tbody></table>";
+        if (!d.users.length) html += '<div class="ad-empty">还没有注册用户</div>';
+        html += "</div>";
         $("admin-body").innerHTML = html;
         $("admin-body").querySelectorAll(".adm-btn").forEach(function (btn) {
           btn.addEventListener("click", function () {
