@@ -1,0 +1,149 @@
+total: 146  failures: 0
+
+recall	src_chars	pg_chars	src_imgs	total	dom_imgs	slug	name	status
+0.9802	1213	1237	19	4	19	pv24qy7bnggoc8gq	强化学习自然语言应用面试题.pdf	ok
+0.9843	764	802	0	2	0	empp7usbb32lsv01	大模型Adapter微调面试题.pdf	ok
+0.9850	6383	6332	8	10	8	lzua45bkpsbswtc6	大模型RAG相关面试题.pdf	ok
+0.9860	2506	2515	6	5	6	og9ie1qfc3z250h6	大模型PDF解析面试题.pdf	ok
+0.9863	3067	3072	3	5	3	vmytxne2glgwv5xd	大模型LoRA微调面试题.pdf	ok
+0.9870	1381	1412	3	3	3	qc16ct7uilro93zx	Attention 进阶面试题.pdf	ok
+0.9877	1702	1724	0	2	0	fa61x5b7mne6z613	大模型评测面试题.pdf	ok
+0.9880	5176	5158	14	9	14	dq2k7txcr1vf4x47	大模型分布式训练面试题.pdf	ok
+0.9885	611	651	0	1	0	rdguqsoqntk48ftz	对比学习相似度函数面试题.pdf	ok
+0.9891	3574	3583	12	5	12	ok8n7619gnol7842	大模型负样本样本挖掘面试题.pdf	ok
+0.9896	1639	1667	0	2	0	lqpui5vx6gcsb6k3	大模型强化学习面试题.pdf	ok
+0.9898	4698	4700	2	5	2	vogpr2x2zonn4rte	大模型RAG表格识别方法面试题.pdf	ok
+0.9900	999	1037	1	2	1	axsk3zggus0zd5u2	大模型强化学习PPO面试题.pdf	ok
+0.9907	2152	2182	4	3	4	dvkgg9noywos333f	分布式训练之ZeRO学习面试题.pdf	ok
+0.9913	6636	6621	6	8	6	ay94t8s9u0r36tuw	大模型文档对话面试题.pdf	ok
+0.9914	3387	3404	5	6	5	ni567glr0gaiooqk	大模型增量预训练面试题.pdf	ok
+0.9919	9672	9638	26	16	26	bqvtrfn2hz6hgfh4	大模型微调相关面试题.pdf	ok
+0.9923	2347	2377	4	5	4	xa5cwswgpgr5e5ag	大模型外挂知识库优化面试题.pdf	ok
+0.9930	5718	5723	2	6	2	hinzgsuu7q1bzovk	大模型推理相关面试题.pdf	ok
+0.9931	1748	1781	7	3	7	afagmtefqn64ogol	大模型损失函数面试题.pdf	ok
+0.9932	11429	11395	12	14	12	hic9v8oovd7ki61z	RAG优化相关面试题.pdf	ok
+0.9933	6236	6239	1	8	1	snt45cb6ntnwcz0z	大模型显存问题面试题.pdf	ok
+0.9935	4765	4785	0	5	0	hcr983sv54mfvkh1	Prompting学习微调面试题.pdf	ok
+0.9935	7180	7179	22	14	22	sg3vsy8co2gu700u	大模型RLHF相关面试题.pdf	ok
+0.9936	4068	4088	22	7	22	cu2k7my7hox12h4f	大模型流水线并行训练面试题.pdf	ok
+0.9943	2262	2294	4	4	4	nez18vcdbb6kkw29	大模型参数高效微调面试题.pdf	ok
+0.9947	750	796	3	3	3	zuq88qq0rwumnica	大模型生成SFT数据方法面试题.pdf	ok
+0.9950	3393	3431	4	6	4	gw77y74hsesa3vrs	RAG Fusion优化策略面试题.pdf	ok
+0.9951	14624	14602	3	15	3	tb6mmdxw679ogdnh	RAG关键痛点和解决方案面试题.pdf	ok
+0.9956	8215	8225	1	10	1	rm48hecz8y2gmkup	大模型RAG评测面试题.pdf	ok
+0.9960	7530	7550	1	7	1	agrv77xxe2yz5gbq	大模型Langchain面试题.pdf	ok
+0.9961	7527	7546	0	8	0	hnxpiga5sk54su0s	大模型RAG文本分块面试题.pdf	ok
+0.9961	28510	28451	2	30	2	mb6rqdfp2ymhebl4	分布式训练DeepSpeed面试题.pdf	ok
+0.9962	8759	8770	13	10	13	bmf8fs19qg0llr2u	大模型进阶面试题.pdf	ok
+0.9963	3252	3288	0	4	0	hybkp8q9hqhfsuoz	长期记忆8种优化方式面试题.pdf	ok
+0.9964	93619	93330	1691	126	1691	tcbq2z13x9uo8ofx	AI大模型赋能千行百业实战.pdf	ok
+0.9964	2233	2280	1	3	1	mdvrykdmsshphs27	增量预训练Pretrain样本拼接面试题.pdf	ok
+0.9967	3287	3258	62	27	62	thpwngktosyu2hog	174.10分钟拆解大语言模型黑箱.pdf	ok
+0.9969	2245	2282	0	3	0	wa517d3g9voa2dcf	大模型训练集面试题.pdf	ok
+0.9970	13810	13824	3	14	3	fbk7m8i537oi03s6	大模型PEFT库中使用LoRA技巧面试题.pdf	ok
+0.9971	2408	2453	0	3	0	gyy7fzdmcr2eez0i	Transformers操作面试题.pdf	ok
+0.9976	5348	5380	9	6	9	gsxxfgtzt9ocarfr	分布式并行训练面试题.pdf	ok
+0.9982	7289	7332	2	7	2	qog7d9qz9umc7yb3	分布式训练之DataParallel面试题.pdf	ok
+0.9984	15478	15507	2	15	2	vr6k9cgg7cx6315r	分布式训练之AMP混合精度训练面试题.pdf	ok
+0.9986	15994	16024	8	19	8	mrmga6qmug2paa1y	Llama模型Lora训练微调面试题.pdf	ok
+0.9986	2788	2831	0	3	0	cbh20m4gwzzzh36p	大模型显存优化策略面试题.pdf	ok
+0.9993	5933	5940	0	6	0	bbrucpoccltuws6m	Langchain RAG问答应用面试题.pdf	ok
+0.9993	10461	10508	1	11	1	whq62zc8d0li3d92	Accelerate分布式训练面试题.pdf	ok
+1.0000	0	46	16	16	15	zm4u3gntgfwss7hc	233.多头注意力机制.pdf	img
+1.0000	0	55	18	18	17	zmgtge1v5sgvn28u	282.ReAct框架原理解析与面试实战.pdf	img
+1.0000	0	59	15	15	15	zqdxnvxnmcgeacv6	249.Transformer核心原理与训练优化.pdf	img
+1.0000	0	49	15	15	15	ztkse06uf7gow482	224.大模型微调流程理论篇.pdf	img
+1.0000	0	46	15	15	15	zuee2n3pcsr43bi9	227.如何进行词嵌入.pdf	img
+1.0000	0	54	15	15	14	zxtb0gqy70ytt0fp	215.模型测评之如何评估大模型的表现.pdf	img
+1.0000	0	60	15	15	14	gytrwfoxx3iw2ysa	250.LlamaFactory微调你的AI大模型.pdf	img
+1.0000	0	47	15	15	15	hbgpfdsw6bxiwbsp	244.对比学习MOCO.pdf	img
+1.0000	0	54	14	14	14	hgg3gdfo659onri7	231.LLM的局限性与RAG技术引入.pdf	img
+1.0000	0	55	15	15	15	hi0775p99vpxunu6	251.AI大模型工作原理及三大核心能力.pdf	img
+1.0000	0	45	15	15	15	rhgxi76ocmek2oa1	195.模型微调原理.pdf	img
+1.0000	0	51	14	14	14	rn5oe88amci91kqq	221.LoRA微调从原理到调参.pdf	img
+1.0000	0	53	15	15	15	rohivs6iprx4r22k	247.多模态算法ALBEF模型解析.pdf	img
+1.0000	0	48	13	13	13	sa2ifbnci5hcb5vh	176.RAG检索增强生成.pdf	img
+1.0000	0	49	14	14	13	dxy9nztkpy5lwmnw	252.AI大模型思维链原理.pdf	img
+1.0000	0	49	15	15	15	egwdleuufk2sqx1e	235.17种RAG优化策略.pdf	img
+1.0000	0	54	15	15	15	eogdglqhd2lgca9g	209.RAG技术的三大范式和技术演进.pdf	img
+1.0000	0	61	20	20	20	eyr0nqhftgv7y2tg	281.从传统RAG到Agentic RAG的进阶优化.pdf	img
+1.0000	0	54	15	15	15	mtzwos32eywx2xx3	248.多模态算法BLIP模型深度解析.pdf	img
+1.0000	0	51	20	20	19	nbwig4qsg27oe70s	280.Rerank模型深度讲解.pdf	img
+1.0000	0	53	20	20	19	neawnny9hgo6rqx2	274.BERT核心原理及预训练机制.pdf	img
+1.0000	0	52	20	20	20	ddrg0wcfk6la6kaw	273.向量化和词嵌入的区别是什么.pdf	img
+1.0000	0	50	20	20	20	dwqg5eumz757eitv	205.Coze工作流和触发器.pdf	img
+1.0000	0	46	15	15	15	rgx7n0yx392lgy2f	229.知识图谱是什么.pdf	img
+1.0000	0	57	20	20	20	zht4k4ig6kyx3tpy	277.LangChain 1.0应该要怎么用.pdf	img
+1.0000	0	53	20	20	19	vkwx7yzg1vmka5ls	283.DeepSeek-R1微调实战.pdf	img
+1.0000	0	56	14	14	14	wdyo9me67iy6bpc1	188.LangGraph工作流与人机交互.pdf	img
+1.0000	0	56	20	20	19	wg3cex8o6749nimo	284.Agent Skill 原理和实践指南.pdf	img
+1.0000	0	56	13	13	12	wgnslgmvae8aard3	216.DeepSpeed大模型分布式框架.pdf	img
+1.0000	0	51	12	12	11	bf4c7249vgr3sce8	177.深度解析RAG与模型微调.pdf	img
+1.0000	0	51	15	15	15	bgqducozefyd9us1	217.深度学习模型工作原理详解.pdf	img
+1.0000	0	52	20	20	19	bi5e61vhfg9m5i2r	261.Gemini 3.0模型测评.pdf	img
+1.0000	0	54	20	20	20	bw9fm1b6uw2ime9e	263.多模态融合技术前沿进展深度解析.pdf	img
+1.0000	0	49	15	15	15	bwgnaty22c2dlq5t	242.知识图谱的构建和应用.pdf	img
+1.0000	0	52	14	14	14	bzyfgwlngdwu40qg	189.LangGraph子图可控性.pdf	img
+1.0000	201	246	8	2	8	fxqsgmfl5ignq3kq	大模型激活函数面试题.pdf	ok
+1.0000	0	50	15	15	15	gesb0gxdbielqug3	194.AI大模型幻觉深度解析.pdf	img
+1.0000	0	48	16	16	16	gfuzpqgx3u12agf2	208.MCP最佳落地实践.pdf	img
+1.0000	0	47	20	20	20	gh5z85eq4s1y88nx	266.知识图谱全景导读.pdf	img
+1.0000	1100	1145	0	2	0	kbhx2wt9bydh7pvr	大模型训练经验面试题.pdf	ok
+1.0000	0	50	12	12	12	kcc6o1h91dz4x05s	190.MCP 三种通信机制对比.pdf	img
+1.0000	0	51	14	14	14	kceraza9xo5m5nr2	186.RAG系统的高级优化工程.pdf	img
+1.0000	0	50	15	15	14	khohvgo7sw7crnoh	226.Al Agent项目实战.pdf	img
+1.0000	0	51	15	15	15	kxx2eser5dxpmx98	257.AI大模型推理与训练详解.pdf	img
+1.0000	0	63	15	15	14	lk8wfumtm6x19byk	192.Llamalndex构建基于行业数据的LLM应用.pdf	img
+1.0000	0	51	15	15	14	tcdi1k204nc2tecc	203.Agents 最佳实践指南.pdf	img
+1.0000	0	57	14	14	14	toigcb3d7x7bmgwi	187.LangChain 快速入门与底层原理.pdf	img
+1.0000	0	55	15	15	15	tt2frr2a329gqzwk	210.Vibe Coding 从入门到实践.pdf	img
+1.0000	0	50	15	15	15	tt2pgbpy5wuckd4h	213.如何微调训练电商大模型.pdf	img
+1.0000	0	53	15	15	15	tunb7tmgrmqhb7un	237.Al Agent核心概念和模块.pdf	img
+1.0000	0	51	20	20	20	tvgkcr56nzg358k0	276.多头自注意力机制深度解析.pdf	img
+1.0000	0	63	15	15	15	pbrl0pqfqbwbahr2	204.为什么说Al大模型微调中最不需要关注的就是GPU.pdf	img
+1.0000	0	53	15	15	15	pg5y7wrb3u3hm5aa	214.借助大模型API自动处理任务.pdf	img
+1.0000	0	48	15	15	15	pz9707onngiq5383	175.大模型应用架构解析.pdf	img
+1.0000	0	56	15	15	15	xqk41iqbz95muab5	228.LangChain应用框架实践教程.pdf	img
+1.0000	0	49	19	19	19	xy63l71g3zkbmt1e	206.Coze知识库和记忆.pdf	img
+1.0000	0	53	15	15	15	decb9y9h1hngak28	222.用Al优化Excel工作流程.pdf	img
+1.0000	0	46	12	12	12	dsp6658yxgmvw5r0	179.AI大模型微调.pdf	img
+1.0000	0	54	16	16	15	dtggg4mpwebqtpkr	230.MCP一键生成可视化Excel.pdf	img
+1.0000	0	53	20	20	20	gn8b8bg5h0k1qqbk	270.AIGC与生成式AI全景拆解.pdf	img
+1.0000	0	54	16	16	15	go81h6yttlggrlks	219.基于Dify的RAG问答工作流.pdf	img
+1.0000	0	46	20	20	20	gooksnxdyplqi14g	272.模型蒸馏是什么.pdf	img
+1.0000	0	49	14	14	14	gpeozqvpchgnwt76	178.AI Agent 智能体.pdf	img
+1.0000	354035	600160	11258	211	11258	gq5n7l8nlgx4m08r	AI大模型公司项目落地实战.pdf	ok
+1.0000	0	55	19	19	19	guz3lyyauv8qezws	260.如何微调BERT模型进行文本分类.pdf	img
+1.0000	0	48	14	14	14	gw20652xyiqyip2z	245.MoE架构深度拆解.pdf	img
+1.0000	0	58	16	16	16	hy0h50n3hhiw69zn	211.深入理解Transformer技术原理.pdf	img
+1.0000	0	48	14	14	14	iihzheb5eb9fmmx0	238.混合专家模型MoE.pdf	img
+1.0000	0	57	14	14	14	ikhyeg86skawbb42	185.深入理解检索增强生成(RAG)的工作机制.pdf	img
+1.0000	0	51	20	20	20	imgoyhfed449csto	275.神经网络工作原理深度解析.pdf	img
+1.0000	0	47	14	14	13	ohvpodyb32d5cggy	200.大模型思维链原理.pdf	img
+1.0000	0	61	20	20	20	amnkbreuehdhp92m	265.提示词工程Prompt Engineering.pdf	img
+1.0000	0	51	13	13	13	apcoilfp18kn26bm	181.RAG检索优化与实践指南.pdf	img
+1.0000	0	49	16	16	16	lv2zzg1475b5eg7e	278.多智能体架构深度解析.pdf	img
+1.0000	0	59	15	15	14	mb85i3phga07ccw0	253.多模态Vision Transformer.pdf	img
+1.0000	0	53	19	19	19	mht9vpeehvqfhlhc	239.从0开始写一个AI Agent.pdf	img
+1.0000	0	60	12	12	12	ssxh80kiytq2w9dn	199.模型微调数据集创建工具Easy dataset.pdf	img
+1.0000	4131	4153	3	5	3	sw8kcvhv7srici10	Graph RAG面试题.pdf	ok
+1.0000	0	47	14	14	14	uiv5b4715gh7cb1z	268.知识图谱嵌入技术.pdf	img
+1.0000	0	58	14	14	13	uoose19iw02kwmh2	191.Llamalndex框架入门与实践指南.pdf	img
+1.0000	0	46	15	15	14	ve67nb9v8a1mp6k7	234.如何评估RAG.pdf	img
+1.0000	0	52	20	20	20	qebqin2a5egawuqu	267.AI大模型企业落地实战指南.pdf	img
+1.0000	0	48	16	16	15	qkq71ffzawg7qpdv	236.多模态模型CLIP.pdf	img
+1.0000	0	48	17	17	16	qtm4y2es93g6fdty	241.RAG十种优化技巧.pdf	img
+1.0000	0	50	15	15	15	qyc9sz8kto600tu6	255.AI大模型预训练与微调.pdf	img
+1.0000	0	48	15	15	14	qzgka3e44d6fccor	218.卷积神经网络CNN.pdf	img
+1.0000	0	50	14	14	14	re3cg1bckhxzrwc4	212.如何实现一个RAG架构.pdf	img
+1.0000	0	59	19	19	19	fggwhkceyozgsz81	207.零代码搭建Excel数据分析可视化小助手.pdf	img
+1.0000	813	859	7	3	7	fgwtn7wv8f9z4wgk	深度学习层归一化面试题.pdf	ok
+1.0000	11	60	12	12	11	fi5eyf1xgyb7dnil	182.RAG和微调的应用场景.pdf	img
+1.0000	0	49	20	20	20	fkgxzh8w1nu011e7	279.17种RAG优化策略.pdf	img
+1.0000	0	51	15	15	15	wocg4bz4s1wtrxgi	220.多Agent应用最佳实践.pdf	img
+1.0000	0	54	12	12	12	wwd3ecgwtrqaflvn	180.深度解析Agent两大认知框架.pdf	img
+1.0000	2171	2227	0	2	0	yxivtaeb3cduskrx	分布式训练之PyTorch多进程模块面试题.pdf	ok
+1.0000	0	55	15	15	15	zc3iu39zat5xr9fz	225.基于Docker本地部署Coze.pdf	img
+1.0000	0	57	20	20	20	zg8urb7x0zk773og	271.零基础速通AI大模型应用开发学习路线.pdf	img
+1.0000	0	61	15	15	14	ns23rx0vgu7wwp36	240.Transformer中的前馈神经网络(FFN).pdf	img
+1.0000	0	61	15	15	15	nzp5eqabv6gcy6q1	246.基于LangGraph搭建一个Agent应用.pdf	img
